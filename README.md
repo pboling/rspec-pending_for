@@ -44,7 +44,11 @@ Or install it yourself as:
 
 ## Usage
 
-The gem auto-configures itself for use in your Rspec suite.  Just use it!
+The gem auto-configures itself for use in your Rspec suite.  Just add this line to yous `spec_helper.rb`:
+
+```ruby
+require 'rspec/pending_for'
+```
 
 To mark a spec pending for a specific ruby engine, and/or versions:
 
