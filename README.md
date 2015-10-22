@@ -22,7 +22,53 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To mark a spec pending for a specific ruby engine, and/or versions:
+
+```ruby
+it("blah is blah") do
+  pending_for(engine: "ruby", version: "2.1.5")
+  expect("blah").to eq "blah"
+end
+```
+
+To skip a spec for a specific ruby engine, and/or versions:
+
+```ruby
+it("blah is blah") do
+  skip_for(engine: "ruby", version: "2.1.5")
+  expect("blah").to eq "blah"
+end
+```
+
+To mark a spec pending for all versions of a given engine:
+
+```ruby
+it("blah is blah") do
+  skip_for(engine: "jruby")
+  expect("blah").to eq "blah"
+end
+```
+
+To mark a spec pending for a custom reason (overriding the default message):
+
+```ruby
+it("blah is blah") do
+  skip_for(engine: "jruby", reason: "This does not work on JRuby")
+  expect("blah").to eq "blah"
+end
+```
+
+To mark a spec pending or skipped for multiple engines and versions, just what you would expect:
+
+```ruby
+it("blah is blah") do
+  skip_for(engine: "jruby", reason: "This does not work on JRuby so skipping for now") # All JRuby versions will be skipped
+  pending_for(engine: "rbx", reason: "This does not work on Rubinius so pending for now") # All rbx versions will be pending
+  pending_for(engine: "ruby", versions:%w(1.9.3 2.0.0 2.1.0)) # uses the default message
+  expect("blah").to eq "blah"
+end
+```
+
 
 ## Development
 
