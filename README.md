@@ -1,5 +1,14 @@
 # Rspec::PendingFor
 
+Easiest to just show you:
+
+```ruby
+it("blah is blah") do
+  pending_for(engine: "ruby", version: "2.1.5")
+  expect("blah").to eq "blah"
+end
+```
+
 | Project                 |  Rspec::PendingFor |
 |------------------------ | ------------------ |
 | gem name                |  rspec-pending_for |
