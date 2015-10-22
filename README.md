@@ -1,8 +1,20 @@
 # Rspec::PendingFor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec/pending_for`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+| Project                 |  Rspec::PendingFor |
+|------------------------ | ------------------ |
+| gem name                |  rspec-pending_for |
+| license                 |  MIT               |
+| moldiness               |  [![Maintainer Status](http://stillmaintained.com/pboling/rspec-pending_for.png)](http://stillmaintained.com/pboling/rspec-pending_for) |
+| version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.png)](http://badge.fury.io/rb/rspec-pending_for) |
+| dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.png)](https://gemnasium.com/pboling/rspec-pending_for) |
+| code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.png)](https://codeclimate.com/github/pboling/rspec-pending_for) |
+| inline documenation     |  [![Inline docs](http://inch-ci.org/github/pboling/rspec-pending_for.png)](http://inch-ci.org/github/pboling/rspec-pending_for) |
+| continuous integration  |  [![Build Status](https://secure.travis-ci.org/pboling/rspec-pending_for.png?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
+| test coverage           |  [![Coverage Status](https://coveralls.io/repos/pboling/rspec-pending_for/badge.png)](https://coveralls.io/r/pboling/rspec-pending_for) |
+| homepage                |  [https://github.com/pboling/rspec-pending_for][homepage] |
+| documentation           |  [http://rdoc.info/github/pboling/rspec-pending_for/frames][documentation] |
+| author                  |  [Peter Boling](https://coderbits.com/pboling) |
+| Spread ~♡ⓛⓞⓥⓔ♡~      |  [![Endorse Me](https://api.coderwall.com/pboling/endorsecount.png)](http://coderwall.com/pboling) |
 
 ## Installation
 
@@ -76,7 +88,50 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+
+## Authors
+
+[Peter H. Boling][peterboling] of [Rails Bling][railsbling] is the author.
+
+## Contributors
+
+See the [Network View](https://github.com/pboling/rspec-pending_for/network) and the [CHANGELOG](https://github.com/pboling/rspec-pending_for/blob/master/CHANGELOG.md)
+
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-pending_for.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+6. Create new Pull Request
 
+Bug reports and pull requests are welcome on GitHub at https://github.com/pboling/rspec-pending_for.
+
+## Versioning
+
+This library aims to adhere to [Semantic Versioning 2.0.0][semver].
+Violations of this scheme should be reported as bugs. Specifically,
+if a minor or patch version is released that breaks backward
+compatibility, a new version should be immediately released that
+restores compatibility. Breaking changes to the public API will
+only be introduced with new major versions.
+
+As a result of this policy, you can (and should) specify a
+dependency on this gem using the [Pessimistic Version Constraint][pvc] with two digits of precision.
+
+For example:
+
+    spec.add_dependency 'rspec-pending_for', '~> 1.1'
+
+## Legal
+
+* MIT License - See LICENSE file in this project
+* Copyright (c) 2015 [Peter H. Boling][peterboling] of [Rails Bling][railsbling]
+
+[semver]: http://semver.org/
+[pvc]: http://docs.rubygems.org/read/chapter/16#page74
+[railsbling]: http://www.railsbling.com
+[peterboling]: https://about.me/peter.boling
+[documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
+[homepage]: https://github.com/pboling/rspec-pending_for
