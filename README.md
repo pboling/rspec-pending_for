@@ -5,6 +5,7 @@ Easiest to just show you:
 ```ruby
 it("blah is blah") do
   pending_for(engine: "ruby", version: "2.1.5")
+  pending_for(engine: "jruby", version: "2.2.2")
   expect("blah").to eq "blah"
 end
 ```
