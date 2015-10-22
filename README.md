@@ -44,6 +44,8 @@ Or install it yourself as:
 
 ## Usage
 
+The gem auto-configures itself for use in your Rspec suite.  Just use it!
+
 To mark a spec pending for a specific ruby engine, and/or versions:
 
 ```ruby
