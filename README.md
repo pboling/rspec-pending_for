@@ -10,6 +10,8 @@ it("blah is blah") do
 end
 ```
 
+Requires Ruby 1.9+ (any engine)
+
 | Project                 |  Rspec::PendingFor |
 |------------------------ | ------------------ |
 | gem name                |  rspec-pending_for |
