@@ -16,11 +16,11 @@ Requires Ruby 1.9+ (any engine)
 |------------------------ | ------------------ |
 | gem name                |  rspec-pending_for |
 | license                 |  MIT               |
-| version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.png)](http://badge.fury.io/rb/rspec-pending_for) |
-| dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.png)](https://gemnasium.com/pboling/rspec-pending_for) |
-| code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.png)](https://codeclimate.com/github/pboling/rspec-pending_for) |
-| inline documenation     |  [![Inline docs](http://inch-ci.org/github/pboling/rspec-pending_for.png)](http://inch-ci.org/github/pboling/rspec-pending_for) |
-| continuous integration  |  [![Build Status](https://secure.travis-ci.org/pboling/rspec-pending_for.png?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
+| version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.svg)](http://badge.fury.io/rb/rspec-pending_for) |
+| dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.svg)](https://gemnasium.com/pboling/rspec-pending_for) |
+| code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.svg)](https://codeclimate.com/github/pboling/rspec-pending_for) |
+| inline documenation     |  [![Inline docs](http://inch-ci.org/github/pboling/rspec-pending_for.svg)](http://inch-ci.org/github/pboling/rspec-pending_for) |
+| continuous integration  |  [![Build Status](https://secure.travis-ci.org/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
 | homepage                |  [https://github.com/pboling/rspec-pending_for][homepage] |
 | documentation           |  [http://rdoc.info/github/pboling/rspec-pending_for/frames][documentation] |
 | author                  |  [Peter Boling](https://coderbits.com/pboling) |
