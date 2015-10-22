@@ -72,7 +72,7 @@ To mark a spec pending for all versions of a given engine:
 
 ```ruby
 it("blah is blah") do
-  skip_for(engine: "jruby")
+  pending_for(engine: "jruby")
   expect("blah").to eq "blah"
 end
 ```
@@ -81,7 +81,7 @@ To mark a spec pending for a custom reason (overriding the default message):
 
 ```ruby
 it("blah is blah") do
-  skip_for(engine: "jruby", reason: "This does not work on JRuby")
+  pending_for(engine: "jruby", reason: "This does not work on JRuby")
   expect("blah").to eq "blah"
 end
 ```
