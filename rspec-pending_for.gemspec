@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["peter.boling@gmail.com"]
 
   spec.summary       = %q{Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / version combinations}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/pboling/rspec-pending_for"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
