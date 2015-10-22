@@ -6,9 +6,7 @@ rvm:
   - 2.1.7
   - 2.2.3
   - rbx
-  - rbx-head
   - jruby
   - jruby-9.0.1.0
   - jruby-head
-  - mruby-head
 before_install: gem install bundler -v 1.10.6
