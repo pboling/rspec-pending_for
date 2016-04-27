@@ -12,19 +12,31 @@ end
 
 Requires Ruby 1.9+ (any engine)
 
-| Project                 |  Rspec::PendingFor |
-|------------------------ | ------------------ |
-| gem name                |  rspec-pending_for |
-| license                 |  MIT               |
-| version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.svg)](http://badge.fury.io/rb/rspec-pending_for) |
-| dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.svg)](https://gemnasium.com/pboling/rspec-pending_for) |
-| code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.svg)](https://codeclimate.com/github/pboling/rspec-pending_for) |
-| inline documenation     |  [![Inline docs](http://inch-ci.org/github/pboling/rspec-pending_for.svg)](http://inch-ci.org/github/pboling/rspec-pending_for) |
-| continuous integration  |  [![Build Status](https://secure.travis-ci.org/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
-| homepage                |  [https://github.com/pboling/rspec-pending_for][homepage] |
-| documentation           |  [http://rdoc.info/github/pboling/rspec-pending_for/frames][documentation] |
-| author                  |  [Peter Boling](https://coderbits.com/pboling) |
-| Spread ~♡ⓛⓞⓥⓔ♡~      |  [![Endorse Me](https://api.coderwall.com/pboling/endorsecount.png)](http://coderwall.com/pboling) |
+| Project                 |  Rspec::PendingFor    |
+|------------------------ | ----------------- |
+| gem name                |  rspec-pending_for   |
+| license                 |  MIT              |
+| expert support          |  [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github) |
+| download rank               |  [![Total Downloads](https://img.shields.io/gem/rt/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
+| version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.png)](http://badge.fury.io/rb/rspec-pending_for) |
+| dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.png)](https://gemnasium.com/pboling/rspec-pending_for) |
+| code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.png)](https://codeclimate.com/github/pboling/rspec-pending_for) |
+| inline documenation     |  [![Inline docs](http://inch-ci.org/github/pboling/rspec-pending_for.png)](http://inch-ci.org/github/pboling/rspec-pending_for) |
+| continuous integration  |  [![Build Status](https://secure.travis-ci.org/pboling/rspec-pending_for.png?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
+| test coverage           |  [![Coverage Status](https://coveralls.io/repos/pboling/rspec-pending_for/badge.png)](https://coveralls.io/r/pboling/rspec-pending_for) |
+| homepage                |  [on Github.com][homepage] |
+| documentation           |  [on Rdoc.info][documentation] |
+| live chat               |  [![Join the chat at https://gitter.im/pboling/rspec-pending_for](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pboling/rspec-pending_for?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) |
+| Spread ~♡ⓛⓞⓥⓔ♡~      |  [on Coderbits][coderbits], [on Coderwall][coderwall] |
+
+[semver]: http://semver.org/
+[pvc]: http://docs.rubygems.org/read/chapter/16#page74
+[railsbling]: http://www.railsbling.com
+[peterboling]: http://www.peterboling.com
+[coderbits]: https://coderbits.com/pboling
+[coderwall]: http://coderwall.com/pboling
+[documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
+[homepage]: https://github.com/pboling/rspec-pending_for
 
 ## Installation
 
