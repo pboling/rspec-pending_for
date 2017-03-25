@@ -18,7 +18,7 @@ module Rspec
     # How to pend specs that break due to bugs in Ruby interpreters or versions
     #
     #     it("blah is blah") do
-    #       pending_for(engine: "ruby", version: "2.1.5")
+    #       pending_for(engine: "ruby", versions: "2.1.5")
     #       expect("blah").to eq "blah"
     #     end
     #
@@ -29,7 +29,7 @@ module Rspec
     # How to pend specs that break due to bugs in Ruby interpreters or versions
     #
     #     it("blah is blah") do
-    #       skip_for(engine: "jruby", version: "2.2.2")
+    #       skip_for(engine: "jruby", versions: "2.2.2")
     #       expect("blah").to eq "blah"
     #     end
     #

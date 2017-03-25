@@ -4,8 +4,10 @@ Easiest to just show you:
 
 ```ruby
 it("blah is blah") do
-  pending_for(engine: "ruby", version: "2.1.5")
-  pending_for(engine: "jruby", version: "2.2.2")
+  pending_for(engine: "rbx")
+  pending_for(engine: "ruby", versions: "2.1.5")
+  pending_for(engine: "jruby", versions: "2.2.2", reason: "due to a bug in Ruby")
+  pending_for(engine: "ruby", versions: "2.0.0", reason: "because I don't have the time")
   expect("blah").to eq "blah"
 end
 ```
@@ -17,7 +19,7 @@ Requires Ruby 1.9+ (any engine)
 | gem name                |  rspec-pending_for   |
 | license                 |  MIT              |
 | expert support          |  [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/peterboling?utm_source=github&utm_medium=button&utm_term=peterboling&utm_campaign=github) |
-| download rank               |  [![Total Downloads](https://img.shields.io/gem/rt/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
+| download rank           |  [![Total Downloads](https://img.shields.io/gem/rt/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
 | version                 |  [![Gem Version](https://badge.fury.io/rb/rspec-pending_for.png)](http://badge.fury.io/rb/rspec-pending_for) |
 | dependencies            |  [![Dependency Status](https://gemnasium.com/pboling/rspec-pending_for.png)](https://gemnasium.com/pboling/rspec-pending_for) |
 | code quality            |  [![Code Climate](https://codeclimate.com/github/pboling/rspec-pending_for.png)](https://codeclimate.com/github/pboling/rspec-pending_for) |
@@ -27,14 +29,15 @@ Requires Ruby 1.9+ (any engine)
 | homepage                |  [on Github.com][homepage] |
 | documentation           |  [on Rdoc.info][documentation] |
 | live chat               |  [![Join the chat at https://gitter.im/pboling/rspec-pending_for](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pboling/rspec-pending_for?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) |
-| Spread ~♡ⓛⓞⓥⓔ♡~      |  [on Coderbits][coderbits], [on Coderwall][coderwall] |
+| author                  |  Peter Boling ([Rubyish Blog](https://railsbling.com)) |
+| Spread ~♡ⓛⓞⓥⓔ♡~↝     |  [on AngelList][angellist], [on Coderwall][coderwall] |
 
 [semver]: http://semver.org/
 [pvc]: http://docs.rubygems.org/read/chapter/16#page74
 [railsbling]: http://www.railsbling.com
 [peterboling]: http://www.peterboling.com
 [coderbits]: https://coderbits.com/pboling
-[coderwall]: http://coderwall.com/pboling
+[angellist]: https://angel.co/peter-boling
 [documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
 [homepage]: https://github.com/pboling/rspec-pending_for
 
@@ -66,7 +69,7 @@ To mark a spec pending for a specific ruby engine, and/or versions:
 
 ```ruby
 it("blah is blah") do
-  pending_for(engine: "ruby", version: "2.1.5")
+  pending_for(engine: "ruby", versions: "2.1.5")
   expect("blah").to eq "blah"
 end
 ```
@@ -75,7 +78,7 @@ To skip a spec for a specific ruby engine, and/or versions:
 
 ```ruby
 it("blah is blah") do
-  skip_for(engine: "ruby", version: "2.1.5")
+  skip_for(engine: "ruby", versions: "2.1.5")
   expect("blah").to eq "blah"
 end
 ```
