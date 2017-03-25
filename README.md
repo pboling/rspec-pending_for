@@ -36,8 +36,8 @@ Requires Ruby 1.9+ (any engine)
 [pvc]: http://docs.rubygems.org/read/chapter/16#page74
 [railsbling]: http://www.railsbling.com
 [peterboling]: http://www.peterboling.com
-[coderbits]: https://coderbits.com/pboling
 [angellist]: https://angel.co/peter-boling
+[coderwall]: http://coderwall.com/pboling
 [documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
 [homepage]: https://github.com/pboling/rspec-pending_for
 
