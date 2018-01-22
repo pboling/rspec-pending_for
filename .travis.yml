@@ -20,28 +20,23 @@ matrix:
   include:
     - rvm: 1.9.3-p551
       gemfile: gemfiles/ruby_1.9.3_p551.gemfile
-      env: ISOLATED=true
     - rvm: 2.0.0-p648
       gemfile: gemfiles/ruby_2.0.0_p648.gemfile
-      env: ISOLATED=true
     - rvm: 2.1.10
       gemfile: gemfiles/ruby_2.1.10.gemfile
-      env: ISOLATED=true
     - rvm: 2.2.9
       gemfile: gemfiles/ruby_2.2.9.gemfile
-      env: ISOLATED=true
     - rvm: 2.3.6
       gemfile: gemfiles/ruby_2.3.6.gemfile
-      env: ISOLATED=true
     - rvm: 2.4.3
       gemfile: gemfiles/ruby_2.4.3.gemfile
-      env: ISOLATED=true
     - rvm: 2.5.0
       gemfile: gemfiles/ruby_2.5.0.gemfile
-      env: ISOLATED=true
+    - rvm: ruby-head
+      gemfile: gemfiles/ruby_head.gemfile
     - rvm: jruby-1.7.26
-      gemfile: gemfiles/jruby_1.7.26.gemfile
-      env: ISOLATED=true
+      gemfile: gemfiles/ruby-head.gemfile
     - rvm: jruby-9.1.15.0
       gemfile: gemfiles/jruby_1.7.26.gemfile
-      env: ISOLATED=true
+    - rvm: jruby-head
+      gemfile: gemfiles/jruby_head.gemfile
