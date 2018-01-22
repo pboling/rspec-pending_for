@@ -1,12 +1,11 @@
-require "ruby_version"
-require "ruby_engine"
-require "rspec/pending_for/version"
-require "rspec/pending_for/engine_or_versions_required"
-require "rspec/pending_for/build"
-require "rspec/pending_for/rspec"
+require 'ruby_version'
+require 'ruby_engine'
+require 'rspec/pending_for/version'
+require 'rspec/pending_for/engine_or_versions_required'
+require 'rspec/pending_for/build'
+require 'rspec/pending_for/rspec'
 
 module Rspec
-
   # Use with Rspec by including in your example groups, just like any other Rspec helpers:
   #
   #     RSpec.configure do |c|
@@ -14,7 +13,6 @@ module Rspec
   #     end
   #
   module PendingFor
-
     # How to pend specs that break due to bugs in Ruby interpreters or versions
     #
     #     it("blah is blah") do
@@ -40,10 +38,9 @@ module Rspec
     private
 
     def modify_example_with(message, options)
-      fail(EngineOrVersionsRequired, :pending_for) unless options[:engine] || options[:versions]
+      raise(EngineOrVersionsRequired, :pending_for) unless options[:engine] || options[:versions]
       build = Build.new(options)
-      self.send(message, build.message) if build.current_matches_specified?
+      send(message, build.message) if build.current_matches_specified?
     end
-
   end
 end

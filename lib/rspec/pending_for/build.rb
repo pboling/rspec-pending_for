@@ -2,7 +2,6 @@ module Rspec
   module PendingFor
     # SRP: Describe the RubyEngine and/or RubyVersion(s) that will be pended or skipped and with what message
     class Build
-
       #
       # | RUBY_ENGINE | Implementation           |
       # |:-----------:|:------------------------:|
@@ -19,20 +18,20 @@ module Rspec
 
       # Keys are the
       INTERPRETER_MATRIX = {
-          "unknown"   => "MRI < 1.9 (probably)",
-          "ruby"      => "MRI >= 1.9",
-          "ree"       => "Ruby Enterprise Edition",
-          "jruby"     => "JRuby",
-          "macruby"   => "MacRuby",
-          "rbx"       => "Rubinius",
-          "maglev"    => "MagLev",
-          "ironruby"  => "IronRuby",
-          "cardinal"  => "Cardinal"
-      }
-      BROKEN_STRING = "Behavior is broken"
-      BUG_STRING = "due to a bug in the Ruby engine"
-      VERSIONS_STRING = "in Ruby versions"
-      ISSUES_LINK = "https://github.com/pboling/rspec-pending_for/issues"
+        'unknown' => 'MRI < 1.9 (probably)',
+        'ruby'      => 'MRI >= 1.9',
+        'ree'       => 'Ruby Enterprise Edition',
+        'jruby'     => 'JRuby',
+        'macruby'   => 'MacRuby',
+        'rbx'       => 'Rubinius',
+        'maglev'    => 'MagLev',
+        'ironruby'  => 'IronRuby',
+        'cardinal'  => 'Cardinal'
+      }.freeze
+      BROKEN_STRING = 'Behavior is broken'.freeze
+      BUG_STRING = 'due to a bug in the Ruby engine'.freeze
+      VERSIONS_STRING = 'in Ruby versions'.freeze
+      ISSUES_LINK = 'https://github.com/pboling/rspec-pending_for/issues'.freeze
 
       attr_reader :message, :relevant_versions, :relevant_engine, :reason
 
@@ -42,10 +41,10 @@ module Rspec
         @reason = options[:reason]
         warn_about_unrecognized_engine
         # If engine is nil, then any matching versions should be pended
-        @message =  if @relevant_engine.nil?
-                      no_engine_specified
-                    elsif RubyEngine.is? @relevant_engine
-                      engine_specified_and_relevant
+        @message = if @relevant_engine.nil?
+                     no_engine_specified
+                   elsif RubyEngine.is? @relevant_engine
+                     engine_specified_and_relevant
                     end
       end
 
@@ -83,7 +82,6 @@ If it is a real RUBY_ENGINE, please report as a bug to #{ISSUES_LINK}
           end
         end
       end
-
     end
   end
 end

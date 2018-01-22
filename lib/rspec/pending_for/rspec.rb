@@ -1,4 +1,4 @@
-require "rspec/core"
+require 'rspec/core'
 begin
   RSpec.configure do |c|
     c.include Rspec::PendingFor
