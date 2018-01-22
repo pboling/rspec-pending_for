@@ -1,11 +1,42 @@
 language: ruby
 rvm:
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - 2.1.7
-  - 2.2.3
-  - jruby
-  - jruby-9.0.1.0
+  - 1.9.3-p551
+  - 2.0.0-p648
+  - 2.1.10
+  - 2.2.9
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0
+  - ruby-head
+  - jruby-1.7.26
+  - jruby-9.1.15.0
   - jruby-head
 before_install: gem install bundler
+matrix:
+  allow_failures:
+    - rvm: jruby-head
+    - rvm: ruby-head
+  fast_finish: true
+  include:
+    - rvm: 1.9.3-p551
+      gemfile: gemfiles/ruby_1.9.3_p551.gemfile
+    - rvm: 2.0.0-p648
+      gemfile: gemfiles/ruby_2.0.0_p648.gemfile
+    - rvm: 2.1.10
+      gemfile: gemfiles/ruby_2.1.10.gemfile
+    - rvm: 2.2.9
+      gemfile: gemfiles/ruby_2.2.9.gemfile
+    - rvm: 2.3.6
+      gemfile: gemfiles/ruby_2.3.6.gemfile
+    - rvm: 2.4.3
+      gemfile: gemfiles/ruby_2.4.3.gemfile
+    - rvm: 2.5.0
+      gemfile: gemfiles/ruby_2.5.0.gemfile
+    - rvm: ruby-head
+      gemfile: gemfiles/ruby_head.gemfile
+    - rvm: jruby-1.7.26
+      gemfile: gemfiles/ruby-head.gemfile
+    - rvm: jruby-9.1.15.0
+      gemfile: gemfiles/jruby_1.7.26.gemfile
+    - rvm: jruby-head
+      gemfile: gemfiles/jruby_head.gemfile
