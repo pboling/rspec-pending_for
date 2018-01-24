@@ -22,9 +22,9 @@ matrix:
       gemfile: gemfiles/ruby_2.5.0.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/ruby_head.gemfile
-    - rvm: jruby-1.7.26
-      gemfile: gemfiles/ruby-head.gemfile
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-1.7.27
       gemfile: gemfiles/jruby_1.7.27.gemfile
+    - rvm: jruby-9.1.15.0
+      gemfile: gemfiles/jruby_9.1.15.0.gemfile
     - rvm: jruby-head
       gemfile: gemfiles/jruby_head.gemfile
