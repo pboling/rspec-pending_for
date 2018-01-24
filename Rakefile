@@ -11,6 +11,4 @@ rescue LoadError
 end
 # rubocop:enable Lint/HandleExceptions
 
-if !ENV["APPRAISAL_INITIALIZED"] && !ENV["TRAVIS"]
-  task :default => [:test, :rubocop]
-end
+task :default => :test
