@@ -25,6 +25,6 @@ matrix:
     - rvm: jruby-1.7.26
       gemfile: gemfiles/ruby-head.gemfile
     - rvm: jruby-9.1.15.0
-      gemfile: gemfiles/jruby_1.7.26.gemfile
+      gemfile: gemfiles/jruby_1.7.27.gemfile
     - rvm: jruby-head
       gemfile: gemfiles/jruby_head.gemfile

@@ -1,4 +1,4 @@
-appraise 'jruby-1.7.26' do
+appraise 'jruby-1.7.27' do
 end
 
 appraise 'ruby-1.9.3-p551' do
