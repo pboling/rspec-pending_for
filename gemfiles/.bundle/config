@@ -1,3 +1,4 @@
 ---
-BUNDLE_PATH: "/Users/pboling/src/rspec-pending_for/vendor/bundle"
 BUNDLE_RETRY: "1"
+BUNDLE_FROZEN: "true"
+BUNDLE_PATH: "/Users/pboling/src/rspec-pending_for/vendor/bundle"

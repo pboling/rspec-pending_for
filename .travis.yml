@@ -6,10 +6,10 @@ matrix:
     - rvm: ruby-head
   fast_finish: true
   include:
-    - rvm: 1.9.3-p551
-      gemfile: gemfiles/ruby_1.9.3_p551.gemfile
-    - rvm: 2.0.0-p648
-      gemfile: gemfiles/ruby_2.0.0_p648.gemfile
+#    - rvm: 1.9.3-p551
+#      gemfile: gemfiles/ruby_1.9.3_p551.gemfile
+#    - rvm: 2.0.0-p648
+#      gemfile: gemfiles/ruby_2.0.0_p648.gemfile
     - rvm: 2.1.10
       gemfile: gemfiles/ruby_2.1.10.gemfile
     - rvm: 2.2.9
@@ -26,5 +26,5 @@ matrix:
       gemfile: gemfiles/jruby_1.7.27.gemfile
     - rvm: jruby-9.1.15.0
       gemfile: gemfiles/jruby_9.1.15.0.gemfile
-    - rvm: jruby-head
-      gemfile: gemfiles/jruby_head.gemfile
+#    - rvm: jruby-head
+#      gemfile: gemfiles/jruby_head.gemfile

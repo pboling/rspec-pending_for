@@ -1,7 +1,16 @@
 require 'bundler/gem_tasks'
-require 'rspec/core/rake_task'
-require 'wwtd/tasks'
 
-RSpec::Core::RakeTask.new(:spec)
+# rubocop:disable Lint/HandleExceptions
+begin
+  require 'wwtd/tasks'
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+  task :test => :spec
+rescue LoadError
+  # puts "failed to load wwtd or rspec, probably because bundled --without-development"
+end
+# rubocop:enable Lint/HandleExceptions
 
-task default: :spec
+if !ENV["APPRAISAL_INITIALIZED"] && !ENV["TRAVIS"]
+  task :default => [:test, :rubocop]
+end
