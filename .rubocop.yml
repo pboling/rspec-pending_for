@@ -1,5 +1,7 @@
 AllCops:
   DisplayCopNames: true # Display the name of the failing cops
+  Exclude:
+    - 'gemfiles/vendor/**/*'
 
 Metrics/LineLength:
   Enabled: false
