@@ -10,3 +10,4 @@
 *.gem
 /vendor/
 /gemfiles/*.lock
+/gemfiles/.bundle/
