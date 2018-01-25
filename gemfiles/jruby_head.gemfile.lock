@@ -40,8 +40,8 @@ PLATFORMS
 DEPENDENCIES
   appraisal
   bundler (~> 1.10)
-  rake (~> 10.0)
-  rspec (~> 3.3)
+  rake
+  rspec
   rspec-pending_for!
   wwtd
 
