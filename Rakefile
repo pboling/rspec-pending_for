@@ -1,4 +1,5 @@
 require 'bundler/gem_tasks'
+
 begin
   require 'wwtd/tasks'
 rescue LoadError
@@ -8,14 +9,13 @@ end
 begin
   require 'rspec/core/rake_task'
   RSpec::Core::RakeTask.new(:spec)
-  task test: :spec
 rescue LoadError
   # puts "failed to load wwtd or rspec, probably because bundled --without-development"
   task :spec do
     warn 'rspec is disabled'
   end
-  task test: :spec
 end
+task :test => :spec
 
 begin
   require 'rubocop/rake_task'
@@ -25,6 +25,5 @@ rescue LoadError
     warn 'RuboCop is disabled'
   end
 end
-# rubocop:enable Lint/HandleExceptions
 
-task default: %i[test rubocop]
+task :default => [:test, :rubocop]

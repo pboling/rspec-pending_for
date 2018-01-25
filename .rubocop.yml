@@ -1,0 +1,25 @@
+AllCops:
+  DisplayCopNames: true # Display the name of the failing cops
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - it
+    - shared_context
+    - shared_examples
+    - shared_examples_for
+    - namespace
+    - draw
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false

@@ -9,7 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Peter Boling']
   spec.email         = ['peter.boling@gmail.com']
 
-  spec.summary       = 'Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / version combinations'
+  spec.summary       = <<-SUMMARY.strip
+  Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / version combinations
+SUMMARY
   spec.homepage      = 'https://github.com/pboling/rspec-pending_for'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

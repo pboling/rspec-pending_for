@@ -32,6 +32,7 @@ module Rspec
       BUG_STRING = 'due to a bug in the Ruby engine'.freeze
       VERSIONS_STRING = 'in Ruby versions'.freeze
       ISSUES_LINK = 'https://github.com/pboling/rspec-pending_for/issues'.freeze
+      RELEVANT_VERSIONS_PROC = ->(rv) { "#{BROKEN_STRING} #{VERSIONS_STRING} #{rv} #{BUG_STRING}" }
 
       attr_reader :message, :relevant_versions, :relevant_engine, :reason
 
@@ -45,7 +46,7 @@ module Rspec
                      no_engine_specified
                    elsif RubyEngine.is? @relevant_engine
                      engine_specified_and_relevant
-                    end
+                   end
       end
 
       def current_matches_specified?
@@ -63,23 +64,15 @@ If it is a real RUBY_ENGINE, please report as a bug to #{ISSUES_LINK}
       end
 
       def no_engine_specified
-        if relevant_versions.include?(RubyVersion.to_s)
-          reason || "#{BROKEN_STRING} #{VERSIONS_STRING} #{relevant_versions} #{BUG_STRING}"
-        else
-          nil # Not a pended/skipped spec
-        end
+        reason || RELEVANT_VERSIONS_PROC.call(relevant_versions) if relevant_versions.include?(RubyVersion.to_s)
       end
 
       def engine_specified_and_relevant
         if relevant_versions.empty?
           # No versions specified means ALL versions for this engine
           reason || "#{BROKEN_STRING} #{BUG_STRING} #{INTERPRETER_MATRIX[relevant_engine]}"
-        else
-          if relevant_versions.include?(RubyVersion.to_s)
-            reason || %[#{BROKEN_STRING} #{VERSIONS_STRING} #{relevant_versions} #{BUG_STRING} (#{INTERPRETER_MATRIX[relevant_engine]})]
-          else
-            nil # Not a pended/skipped spec
-          end
+        elsif relevant_versions.include?(RubyVersion.to_s)
+          reason || %[#{RELEVANT_VERSIONS_PROC.call(relevant_versions)} (#{INTERPRETER_MATRIX[relevant_engine]})]
         end
       end
     end

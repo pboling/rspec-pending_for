@@ -20,7 +20,8 @@ module Rspec
     #       expect("blah").to eq "blah"
     #     end
     #
-    def pending_for(options = {}) # Not using named parameters because still supporting Ruby 1.9
+    # Not using named parameters because still supporting Ruby 1.9
+    def pending_for(options = {})
       modify_example_with(:pending, options)
     end
 
@@ -31,7 +32,8 @@ module Rspec
     #       expect("blah").to eq "blah"
     #     end
     #
-    def skip_for(options = {}) # Not using named parameters because still supporting Ruby 1.9
+    # Not using named parameters because still supporting Ruby 1.9
+    def skip_for(options = {})
       modify_example_with(:skip, options)
     end
 
