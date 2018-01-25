@@ -4,9 +4,8 @@ end
 appraise 'ruby-1.9.3-p551' do
 end
 
-# Having trouble with compiling 2.0.0 with OpenSSL
-# appraise 'ruby-2.0.0-p648' do
-# end
+appraise 'ruby-2.0.0-p648' do
+end
 
 appraise 'ruby-2.1.10' do
 end
