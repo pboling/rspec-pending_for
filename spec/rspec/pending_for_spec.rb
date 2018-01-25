@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Rspec::PendingFor do
   # Make the methods callable for the purposes of testing
   module Rspec

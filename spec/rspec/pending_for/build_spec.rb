@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Rspec::PendingFor::Build do
   it 'can be instantiated' do
     expect(Rspec::PendingFor::Build.new).to be_a Rspec::PendingFor::Build
