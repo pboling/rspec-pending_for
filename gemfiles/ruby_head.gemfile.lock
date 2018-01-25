@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    rspec-pending_for (0.1.6)
+    rspec-pending_for (0.1.7)
       rspec-core
       ruby_engine (~> 1.0)
       ruby_version (~> 1.0)
