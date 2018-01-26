@@ -32,7 +32,7 @@ module Rspec
       BUG_STRING = 'due to a bug in the Ruby engine'.freeze
       VERSIONS_STRING = 'in Ruby versions'.freeze
       ISSUES_LINK = 'https://github.com/pboling/rspec-pending_for/issues'.freeze
-      RELEVANT_VERSIONS_PROC = ->(rv) { "#{BROKEN_STRING} #{VERSIONS_STRING} #{rv} #{BUG_STRING}" }
+      RELEVANT_VERSIONS_PROC = lambda { |rv| "#{BROKEN_STRING} #{VERSIONS_STRING} #{rv} #{BUG_STRING}" }
 
       attr_reader :message, :relevant_versions, :relevant_engine, :reason
 

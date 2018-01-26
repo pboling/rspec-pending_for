@@ -3,9 +3,6 @@ AllCops:
   Exclude:
     - 'gemfiles/vendor/**/*'
 
-Metrics/LineLength:
-  Enabled: false
-
 Metrics/BlockLength:
   ExcludedMethods:
     - context
@@ -17,11 +14,17 @@ Metrics/BlockLength:
     - namespace
     - draw
 
+Metrics/LineLength:
+  Enabled: false
+
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
 
-Style/SymbolArray:
+Style/Lambda:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/SymbolArray:
   Enabled: false
