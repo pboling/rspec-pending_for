@@ -27,6 +27,5 @@ SUMMARY
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', ['>= 10.0', '<= 13']
   spec.add_development_dependency 'rspec', '~> 3.3'
-  spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'wwtd'
 end

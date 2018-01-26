@@ -2,4 +2,14 @@
 
 source "https://rubygems.org"
 
+group :development do
+  gem "pry"
+end
+
+group :test do
+  gem "rubocop", "~> 0.52.1"
+  gem 'rake'
+  gem 'rspec'
+end
+
 gemspec path: "../"
