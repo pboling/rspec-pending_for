@@ -55,7 +55,7 @@ describe Rspec::PendingFor::Build do
       end
       context 'current version matches' do
         it 'defaults to a nice message' do
-          expect(Rspec::PendingFor::Build.new(:engine => 'rbx', :versions => '2.1.5').message).to eq 'Behavior is broken in Ruby versions ["2.1.5"] due to a bug in the Ruby engine (Rubinius)'
+          expect(Rspec::PendingFor::Build.new(:engine => 'rbx', :versions => '2.1.5').message).to match /Behavior is broken in Ruby versions .*2\.1\.5.* due to a bug in the Ruby engine \(Rubinius\)/
         end
       end
       context 'current version does not match' do
@@ -66,7 +66,7 @@ describe Rspec::PendingFor::Build do
     end
     context 'current version matches' do
       it 'defaults to a nice message' do
-        expect(Rspec::PendingFor::Build.new(:versions => '2.1.5').message).to eq 'Behavior is broken in Ruby versions ["2.1.5"] due to a bug in the Ruby engine'
+        expect(Rspec::PendingFor::Build.new(:versions => '2.1.5').message).to match /Behavior is broken in Ruby versions .*2\.1\.5.* due to a bug in the Ruby engine/
       end
     end
     context 'current version does not match' do
