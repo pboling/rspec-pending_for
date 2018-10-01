@@ -1,4 +1,5 @@
-lib = File.expand_path('lib', __dir__)
+# NOTE: Have to use __FILE__ until Ruby 1.x support is dropped
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rspec/pending_for/version'
 
