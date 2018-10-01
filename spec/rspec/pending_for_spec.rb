@@ -1,4 +1,4 @@
-describe Rspec::PendingFor do
+RSpec.describe Rspec::PendingFor do
   # Make the methods callable for the purposes of testing
   module Rspec
     module PendingFor
