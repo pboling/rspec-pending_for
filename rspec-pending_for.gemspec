@@ -1,5 +1,4 @@
-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rspec/pending_for/version'
 
@@ -9,10 +8,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Peter Boling']
   spec.email         = ['peter.boling@gmail.com']
 
-  spec.summary       = <<-SUMMARY.strip
-  Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / version combinations
-SUMMARY
+  spec.summary       = 'Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / version combinations'
   spec.homepage      = 'https://github.com/pboling/rspec-pending_for'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
@@ -24,8 +22,8 @@ SUMMARY
   spec.add_dependency 'ruby_version', '~> 1.0'
 
   spec.add_development_dependency 'appraisal'
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', ['>= 10.0', '<= 13']
-  spec.add_development_dependency 'rspec', '~> 3.3'
+  spec.add_development_dependency 'rspec', '~> 3.8'
   spec.add_development_dependency 'wwtd'
 end

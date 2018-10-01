@@ -41,6 +41,7 @@ module Rspec
 
     def modify_example_with(message, options)
       raise(EngineOrVersionsRequired, :pending_for) unless options[:engine] || options[:versions]
+
       build = Build.new(options)
       send(message, build.message) if build.current_matches_specified?
     end

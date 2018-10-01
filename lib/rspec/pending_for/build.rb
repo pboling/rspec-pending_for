@@ -57,6 +57,7 @@ module Rspec
 
       def warn_about_unrecognized_engine
         return false if relevant_engine.nil? || !INTERPRETER_MATRIX[relevant_engine].nil?
+
         warn %[
 Engine specified (#{relevant_engine}) is not known to rspec-pending_for.
 If it is a real RUBY_ENGINE, please report as a bug to #{ISSUES_LINK}
