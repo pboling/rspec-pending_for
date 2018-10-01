@@ -29,3 +29,7 @@ Style/PercentLiteralDelimiters:
 
 Style/SymbolArray:
   Enabled: false
+
+# Enable when drop support for Ruby < 2
+Style/ExpandPathArguments:
+  Enabled: false
