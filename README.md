@@ -162,13 +162,13 @@ or in a `gemspec`
 [pvc]: http://guides.rubygems.org/patterns/#pessimistic-version-constraint
 [documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
 [homepage]: https://github.com/pboling/rspec-pending_for
+[blogpage]: http://www.railsbling.com/tags/rspec-pending_for/
 [license]: LICENSE
 [railsbling]: http://www.railsbling.com
 [peterboling]: https://about.me/peter.boling
 [refugees]: https://www.crowdrise.com/helprefugeeswithhopefortomorrowliberia/fundraiser/peterboling
 [gplus]: https://plus.google.com/+PeterBoling/posts
 [topcoder]: https://www.topcoder.com/members/pboling/
-[blogpage]: http://www.railsbling.com/tags/rspec-pending_for/
 [angellist]: https://angel.co/peter-boling
 [coderwall]: http://coderwall.com/pboling
 [twitter]: http://twitter.com/galtzo
