@@ -1,7 +1,11 @@
 require 'bundler/setup'
 
-require 'simplecov'
-SimpleCov.start
+begin
+  require 'simplecov'
+  SimpleCov.start
+rescue LoadError
+  # Not loading simplecov for Ruby < 2.2
+end
 
 require 'rspec/pending_for'
 

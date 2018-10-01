@@ -20,7 +20,7 @@ Requires Ruby 1.9+ (any engine)
 | license                 |  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) |
 | download rank           |  [![Downloads Today](https://img.shields.io/gem/rd/rspec-pending_for.svg)](https://github.com/pboling/rspec-pending_for) |
 | version                 |  [![Version](https://img.shields.io/gem/v/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
-| dependencies            |  [![Depfu](https://badges.depfu.com/badges/272ce0df3bc6df5cbea9354e2c3b65af/count.svg)](https://depfu.com/github/pboling/rspec-pending_for?project_id=5614) |
+| dependencies            |  [![Depfu](https://badges.depfu.com/badges/79867e590f063376f40b031a1447c215/count.svg)](https://depfu.com/github/pboling/rspec-block_is_expected?project_id=5865) |
 | continuous integration  |  [![Build Status](https://travis-ci.org/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
 | test coverage           |  [![Test Coverage](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/test_coverage)](https://codeclimate.com/github/pboling/rspec-pending_for/test_coverage) |
 | maintainability         |  [![Maintainability](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/maintainability)](https://codeclimate.com/github/pboling/rspec-pending_for/maintainability) |
