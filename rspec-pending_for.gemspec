@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rspec-core'
+  spec.add_dependency 'rspec-core', '3.8.1'
   spec.add_dependency 'ruby_engine', '~> 1.0'
   spec.add_dependency 'ruby_version', '~> 1.0'
 
