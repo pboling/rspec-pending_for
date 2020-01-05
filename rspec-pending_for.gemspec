@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rspec-core'
-  spec.add_dependency 'ruby_engine', '~> 1.0'
+  spec.add_dependency 'ruby_engine', '~> 2.0'
   spec.add_dependency 'ruby_version', '~> 1.0'
 
   spec.add_development_dependency 'appraisal'
