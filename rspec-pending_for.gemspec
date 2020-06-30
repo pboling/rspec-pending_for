@@ -13,9 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/pboling/rspec-pending_for'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = Dir['lib/**/*', 'LICENSE', 'README.md']
   spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.add_dependency 'rspec-core'

@@ -4,6 +4,7 @@ group :test do
   ruby_version = Gem::Version.new(RUBY_VERSION)
   if ruby_version >= Gem::Version.new('2.1')
     gem 'rubocop', '~> 0.82.0'
+    gem 'rubocop-packaging', '~> 0.1'
     gem 'rubocop-rspec', '~> 1.30.0'
   end
   if ruby_version >= Gem::Version.new('2.0')
