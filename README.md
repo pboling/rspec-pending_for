@@ -27,7 +27,7 @@ Requires Ruby 1.9+ (any engine)
 | code triage             |  [![Open Source Helpers](https://www.codetriage.com/pboling/rspec-pending_for/badges/users.svg)](https://www.codetriage.com/pboling/rspec-pending_for) |
 | homepage                |  [on Github.com][homepage], [on Railsbling.com][blogpage] |
 | documentation           |  [on RDoc.info][documentation] |
-| Spread ~♡ⓛⓞⓥⓔ♡~      |  [🌍 🌎 🌏][peterboling], [🍚][refugees], [➕][gplus], [👼][angellist], [🐛][topcoder], [:shipit:][coderwall], [![Tweet Peter](https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow)][twitter] |
+| Spread ~♡ⓛⓞⓥⓔ♡~      |  [🌏](https://about.me/peter.boling), [👼](https://angel.co/peter-boling), [:shipit:](http://coderwall.com/pboling), [![Tweet Peter](https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow)](http://twitter.com/galtzo), [🌹](https://nationalprogressiveparty.org) |
 
 ## Installation
 
