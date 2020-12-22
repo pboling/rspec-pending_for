@@ -17,7 +17,6 @@ jobs:
   test:
     name: Ruby ${{ matrix.ruby }} ${{ matrix.name_extra || '' }} on ${{ matrix.platform }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
       matrix:
@@ -41,6 +40,7 @@ jobs:
             os: ubuntu-18.04
             env:
               JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
+    runs-on: ${{ matrix.platform }}
     continue-on-error: ${{ matrix.allow_failure || endsWith(matrix.ruby, 'head') }}
     steps:
       - uses: actions/checkout@v2
