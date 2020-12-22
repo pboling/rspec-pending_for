@@ -71,5 +71,7 @@ jobs:
         with:
           node-version: '12'
       - uses: paambaati/codeclimate-action@v2.7.5
+        with:
+          coverageLocations: ${{github.workspace}}/coverage/*.json:json
         env:
           CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
