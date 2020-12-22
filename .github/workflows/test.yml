@@ -70,6 +70,8 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '12'
+      - name: Run tests
+        run: bundle exec rake test
       - uses: paambaati/codeclimate-action@v2.7.5
         with:
           coverageLocations: ${{github.workspace}}/coverage/*.json:json
