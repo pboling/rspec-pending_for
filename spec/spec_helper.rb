@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-begin
-  require 'simplecov'
-  SimpleCov.start
-rescue LoadError
-  # Not loading simplecov for Ruby < 2.2
+ruby_version = Gem::Version.new(RUBY_VERSION)
+if ruby_version >= Gem::Version.new('2.7')
+  begin
+    require 'simplecov'
+    SimpleCov.start
+  end
 end
 
 require 'rspec/pending_for'
