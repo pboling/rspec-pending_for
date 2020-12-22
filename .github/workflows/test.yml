@@ -39,7 +39,6 @@ jobs:
             env:
               JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
     continue-on-error: ${{ matrix.allow_failure || endsWith(matrix.ruby, 'head') }}
-    env: ${{ matrix.env }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup Ruby
