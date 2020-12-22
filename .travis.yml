@@ -43,19 +43,21 @@ matrix:
       gemfile: gemfiles/ruby_2.1.10.gemfile
     - rvm: 2.2.10
       gemfile: gemfiles/ruby_2.2.10.gemfile
-    - rvm: 2.3.7
-      gemfile: gemfiles/ruby_2.3.7.gemfile
-    - rvm: 2.4.4
-      gemfile: gemfiles/ruby_2.4.4.gemfile
-    - rvm: 2.5.1
-      gemfile: gemfiles/ruby_2.5.1.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/ruby_2.3.8.gemfile
+    - rvm: 2.4.10
+      gemfile: gemfiles/ruby_2.4.10.gemfile
+    - rvm: 2.5.8
+      gemfile: gemfiles/ruby_2.5.8.gemfile
+    - rvm: 2.6.6
+      gemfile: gemfiles/ruby_2.6.6.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/ruby_head.gemfile
     - rvm: jruby-1.7.26
       gemfile: gemfiles/jruby_1.7.26.gemfile
     - rvm: jruby-9.1.9.0
-      gemfile: gemfiles/jruby_9.1.9.0.gemfile
+      gemfile: gemfiles/jruby_9.1.17.0.gemfile
     - rvm: jruby-9.2.0.0
-      gemfile: gemfiles/jruby_9.2.0.0.gemfile
+      gemfile: gemfiles/jruby_9.2.13.0.gemfile
     - rvm: jruby-head
       gemfile: gemfiles/jruby_head.gemfile

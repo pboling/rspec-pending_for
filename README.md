@@ -3,12 +3,12 @@
 Easiest to just show you:
 
 ```ruby
-it("blah is blah") do
-  pending_for(engine: "rbx")
-  pending_for(engine: "ruby", versions: "2.1.5")
-  pending_for(engine: "jruby", versions: "2.2.2", reason: "due to a bug in Ruby")
-  pending_for(engine: "ruby", versions: "2.0.0", reason: "because I don't have the time")
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  pending_for(:engine => 'rbx')
+  pending_for(:engine => 'ruby', :versions => '2.1.5')
+  pending_for(:engine => 'jruby', :versions => '2.2.2', :reason => 'due to a bug in Ruby')
+  pending_for(:engine => 'ruby', :versions => '2.0.0', :reason => "because I don't have the time")
+  expect('blah').to eq 'blah'
 end
 ```
 
@@ -20,7 +20,7 @@ Requires Ruby 1.9+ (any engine)
 | license                 |  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) |
 | download rank           |  [![Downloads Today](https://img.shields.io/gem/rd/rspec-pending_for.svg)](https://github.com/pboling/rspec-pending_for) |
 | version                 |  [![Version](https://img.shields.io/gem/v/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
-| dependencies            |  [![Depfu](https://badges.depfu.com/badges/79867e590f063376f40b031a1447c215/count.svg)](https://depfu.com/github/pboling/rspec-block_is_expected?project_id=5865) |
+| dependencies            |  [![Depfu](https://badges.depfu.com/badges/79867e590f063376f40b031a1447c215/count.svg)](https://depfu.com/github/pboling/rspec-pending_for?project_id=5865) |
 | continuous integration  |  [![Build Status](https://travis-ci.org/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
 | test coverage           |  [![Test Coverage](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/test_coverage)](https://codeclimate.com/github/pboling/rspec-pending_for/test_coverage) |
 | maintainability         |  [![Maintainability](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/maintainability)](https://codeclimate.com/github/pboling/rspec-pending_for/maintainability) |
@@ -56,47 +56,47 @@ require 'rspec/pending_for'
 To mark a spec pending for a specific ruby engine, and/or versions:
 
 ```ruby
-it("blah is blah") do
-  pending_for(engine: "ruby", versions: "2.1.5")
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  pending_for(:engine => 'ruby', :versions => '2.1.5')
+  expect('blah').to eq 'blah'
 end
 ```
 
 To skip a spec for a specific ruby engine, and/or versions:
 
 ```ruby
-it("blah is blah") do
-  skip_for(engine: "ruby", versions: "2.1.5")
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  skip_for(:engine => 'ruby', :versions => '2.1.5')
+  expect('blah').to eq 'blah'
 end
 ```
 
 To mark a spec pending for all versions of a given engine:
 
 ```ruby
-it("blah is blah") do
-  pending_for(engine: "jruby")
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  pending_for(:engine => 'jruby')
+  expect('blah').to eq 'blah'
 end
 ```
 
 To mark a spec pending for a custom reason (overriding the default message):
 
 ```ruby
-it("blah is blah") do
-  pending_for(engine: "jruby", reason: "This does not work on JRuby")
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  pending_for(:engine => 'jruby', :reason => 'This does not work on JRuby')
+  expect('blah').to eq 'blah'
 end
 ```
 
 To mark a spec pending or skipped for multiple engines and versions, just what you would expect:
 
 ```ruby
-it("blah is blah") do
-  skip_for(engine: "jruby", reason: "This does not work on JRuby so skipping for now") # All JRuby versions will be skipped
-  pending_for(engine: "rbx", reason: "This does not work on Rubinius so pending for now") # All rbx versions will be pending
-  pending_for(engine: "ruby", versions:%w(1.9.3 2.0.0 2.1.0)) # uses the default message
-  expect("blah").to eq "blah"
+it('blah is blah') do
+  skip_for(:engine => 'jruby', :reason => 'This does not work on JRuby so skipping for now') # All JRuby versions will be skipped
+  pending_for(:engine => 'rbx', :reason => 'This does not work on Rubinius so pending for now') # All rbx versions will be pending
+  pending_for(:engine => 'ruby', :versions => %w(1.9.3 2.0.0 2.1.0)) # uses the default message
+  expect('blah').to eq 'blah'
 end
 ```
 
@@ -155,7 +155,7 @@ or in a `gemspec`
 
 ## Legal
 
-* MIT License - See [LICENSE][license] file in this project [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) 
+* MIT License - See [LICENSE][license] file in this project [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 * Copyright (c) 2015 - 2018 [Peter H. Boling][peterboling] of [Rails Bling][railsbling]
 
 [semver]: http://semver.org/

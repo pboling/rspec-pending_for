@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Rspec
   module PendingFor
     # SRP: Describe the RubyEngine and/or RubyVersion(s) that will be pended or skipped and with what message
@@ -19,19 +21,19 @@ module Rspec
       # Keys are the
       INTERPRETER_MATRIX = {
         'unknown' => 'MRI < 1.9 (probably)',
-        'ruby'      => 'MRI >= 1.9',
-        'ree'       => 'Ruby Enterprise Edition',
-        'jruby'     => 'JRuby',
-        'macruby'   => 'MacRuby',
-        'rbx'       => 'Rubinius',
-        'maglev'    => 'MagLev',
-        'ironruby'  => 'IronRuby',
-        'cardinal'  => 'Cardinal'
+        'ruby' => 'MRI >= 1.9',
+        'ree' => 'Ruby Enterprise Edition',
+        'jruby' => 'JRuby',
+        'macruby' => 'MacRuby',
+        'rbx' => 'Rubinius',
+        'maglev' => 'MagLev',
+        'ironruby' => 'IronRuby',
+        'cardinal' => 'Cardinal'
       }.freeze
-      BROKEN_STRING = 'Behavior is broken'.freeze
-      BUG_STRING = 'due to a bug in the Ruby engine'.freeze
-      VERSIONS_STRING = 'in Ruby versions'.freeze
-      ISSUES_LINK = 'https://github.com/pboling/rspec-pending_for/issues'.freeze
+      BROKEN_STRING = 'Behavior is broken'
+      BUG_STRING = 'due to a bug in the Ruby engine'
+      VERSIONS_STRING = 'in Ruby versions'
+      ISSUES_LINK = 'https://github.com/pboling/rspec-pending_for/issues'
       RELEVANT_VERSIONS_PROC = lambda { |rv| "#{BROKEN_STRING} #{VERSIONS_STRING} #{rv} #{BUG_STRING}" }
 
       attr_reader :message, :relevant_versions, :relevant_engine, :reason

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 appraise 'jruby-1.7.26' do
 end
 
@@ -19,14 +21,26 @@ end
 appraise 'jruby-9.1.9.0' do
 end
 
-appraise 'ruby-2.3.7' do
+appraise 'ruby-2.3.8' do
 end
 
-appraise 'ruby-2.4.4' do
+appraise 'ruby-2.4.10' do
 end
 
-appraise 'ruby-2.5.1' do
+appraise 'ruby-2.5.8' do
+end
+
+appraise 'ruby-2.6.6' do
+end
+
+appraise 'ruby-2.7.1' do
 end
 
 appraise 'jruby-9.2.0.0' do
+end
+
+appraise 'ruby-head' do
+end
+
+appraise 'jruby-head' do
 end

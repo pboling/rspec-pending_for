@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ruby_version'
 require 'ruby_engine'
 require 'rspec/pending_for/version'

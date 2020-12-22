@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Rspec
   module PendingFor
     # Error class raised when pending_for is used but no engine or version is specified.

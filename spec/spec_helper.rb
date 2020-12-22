@@ -1,4 +1,4 @@
-require 'bundler/setup'
+# frozen_string_literal: true
 
 begin
   require 'simplecov'
