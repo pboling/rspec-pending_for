@@ -20,12 +20,6 @@ Lint/ConstantDefinitionInBlock:
   Exclude:
     - 'spec/rspec/pending_for_spec.rb'
 
-# Offense count: 11
-# Configuration parameters: AllowComments, AllowEmptyLambdas.
-Lint/EmptyBlock:
-  Exclude:
-    - 'Appraisals'
-
 # Offense count: 19
 # Configuration parameters: Prefixes.
 # Prefixes: when, with, without

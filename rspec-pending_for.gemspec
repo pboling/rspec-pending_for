@@ -23,7 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'ruby_engine', '~> 1.0'
   spec.add_dependency 'ruby_version', '~> 1.0'
 
-  spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'rake'
