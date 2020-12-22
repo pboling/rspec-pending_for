@@ -2,10 +2,10 @@
 
 ruby_version = Gem::Version.new(RUBY_VERSION)
 if ruby_version >= Gem::Version.new('2.7')
-  begin
-    require 'simplecov'
-    SimpleCov.start
-  end
+
+  require 'simplecov'
+  SimpleCov.start
+
 end
 
 require 'rspec/pending_for'
