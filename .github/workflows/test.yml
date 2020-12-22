@@ -31,9 +31,6 @@ jobs:
           - 2.2
           - 2.1
           - ruby-head
-        env:
-          -
-            CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
         include:
           - ruby: jruby-9.2.13.0
             env:
@@ -57,3 +54,7 @@ jobs:
         run: bundle install --jobs 3 --retry 3 --binstubs --standalone
       - name: Run tests
         run: bundle exec rake test
+      - name: Code Climate Coverage Action
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
