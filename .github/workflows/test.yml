@@ -51,29 +51,20 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
       - name: Install dependencies
         run: bundle install --jobs 3 --retry 3 --binstubs --standalone
-      - name: Run tests
-        run: bundle exec rake test
-  coverage:
-    needs: [ test ]
-    name: CodeClimate Coverage Report
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler: ${{ matrix.bundler || 2 }}
-          bundler-cache: true
-          ruby-version: 2.7
-      - name: Install dependencies
-        run: bundle install --jobs 3 --retry 3 --binstubs --standalone
-      - uses: actions/setup-node@master
-        with:
-          node-version: '12'
-      - name: Run tests
-        run: bundle exec rake test
-      - uses: paambaati/codeclimate-action@v2.7.5
-        with:
-          coverageLocations: ${{github.workspace}}/coverage/*.json:json
+      - name: Install CodeClimate
         env:
           CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+          ./cc-test-reporter before-build
+        if: matrix.ruby >= 'ruby:2.7'
+        continue-on-error: ${{ matrix.allow_failures == 'true' }}
+      - name: Run tests
+        run: bundle exec rake test
+      - name: Upload test coverage to CodeClimate
+        env:
+          CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
+        run: ./cc-test-reporter after-build
+        if: matrix.ruby >= 'ruby:2.7' && always()
+        continue-on-error: ${{ matrix.allow_failures == 'true' }}
