@@ -1,3 +1,5 @@
+dist: trusty
+
 env:
   global:
   - JRUBY_OPTS="-Xcli.debug=true --debug --dev"
@@ -26,7 +28,6 @@ bundler_args: --no-deployment --jobs 3 --retry 3
 cache: bundler
 
 language: ruby
-sudo: false
 matrix:
   fast_finish: true
   include:
