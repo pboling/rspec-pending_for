@@ -12,8 +12,9 @@ bundler_args: "--binstubs --standalone --without documentation --jobs 3 --retry 
 
 before_install:
   - echo "Warning installing older versions of Rubygems / Bundler"
-  - gem update --system '2.7.8'
-  - gem install bundler -v '1.17.3'
+  - yes | gem update --system '2.7.8' --force
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
