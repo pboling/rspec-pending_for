@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 ruby_version = Gem::Version.new(RUBY_VERSION)
-if ruby_version >= Gem::Version.new('2.7')
-
+if ruby_version >= Gem::Version.new('2.7') && RUBY_ENGINE == 'ruby'
   require 'simplecov'
-  SimpleCov.start
-
 end
 
 require 'rspec/pending_for'
