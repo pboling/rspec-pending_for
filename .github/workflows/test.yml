@@ -42,7 +42,7 @@ jobs:
           - ruby: jruby-head
             env:
               JRUBY_OPTS: "-Xcli.debug=true --debug --dev"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     continue-on-error: ${{ matrix.allow_failure || endsWith(matrix.ruby, 'head') }}
     steps:
       - uses: actions/checkout@v2
@@ -61,7 +61,7 @@ jobs:
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
           ./cc-test-reporter before-build
-        if: matrix.ruby >= 'ruby:2.7'
+        if: matrix.ruby >= '2.7'
         continue-on-error: ${{ matrix.allow_failures == 'true' }}
       - name: Run tests
         run: bundle exec rake test
@@ -69,5 +69,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
         run: ./cc-test-reporter after-build
-        if: matrix.ruby >= 'ruby:2.7' && always()
+        if: matrix.ruby >= '2.7' && always()
         continue-on-error: ${{ matrix.allow_failures == 'true' }}

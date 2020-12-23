@@ -7,6 +7,8 @@ on:
       - 'master'
       - '*-maintenance'
       - '*-dev'
+    tags:
+      - '!*' # Do not execute on tags
   pull_request:
     branches:
       - '*'
@@ -18,11 +20,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu
         ruby:
           - 2.7
-    runs-on: ${{ matrix.os }}-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
