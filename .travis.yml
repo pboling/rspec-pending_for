@@ -1,33 +1,42 @@
 dist: trusty
-
+language: ruby
+email: false
+cache:
+  directories:
+    - ../bundle
 env:
   global:
-  - JRUBY_OPTS="-Xcli.debug=true --debug --dev"
-  - CC_TEST_REPORTER_ID=b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
+    - JRUBY_OPTS="-Xcli.debug=true --debug --dev"
+    - CC_TEST_REPORTER_ID=b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
+bundler_args: "--binstubs --standalone --without documentation --jobs 3 --retry 3 --path ../bundle"
+
+before_install:
+  - echo "Warning installing older versions of Rubygems / Bundler"
+  - gem update --system '2.7.8'
+  - gem install bundler -v '1.17.3'
 
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
-- bundle exec rspec
+  - bundle exec rspec
 
 after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
-install:
-- bundle install
 
-bundler_args: --jobs 3 --retry 3
+rvm:
+  - 1.8.7
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+  - ree
+  - jruby-1.7
 
-cache: bundler
-
-language: ruby
 matrix:
-  fast_finish: true
   include:
-    - rvm: 1.8.7-p371
-    - rvm: 1.9.3-p551
-    - rvm: 2.0.0-p648
-    - rvm: jruby-1.7.26
+    - rvm: jruby-1.7
+      env: JRUBY_OPTS='--dev --1.8'
+  fast_finish: true
