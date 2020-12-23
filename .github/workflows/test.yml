@@ -20,8 +20,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        secrets:
-          cc_test_reporter_id: b371af9d80b8b1f593e87d11c20137cf7573149a6296278715acd3fa48ddc280
         ruby:
           - 3.0.0-rc1
           - 2.7
@@ -57,9 +55,9 @@ jobs:
       - name: Install dependencies
         run: bundle install --jobs 3 --retry 3 --binstubs --standalone
       - name: Install CodeClimate
-        if: matrix.ruby == '2.7'
+        if: secrets.cc_test_reporter_id && matrix.ruby == '2.7'
         env:
-          CC_TEST_REPORTER_ID: ${{ matrix.secrets.cc_test_reporter_id }}
+          CC_TEST_REPORTER_ID: ${{ secrets.cc_test_reporter_id }}
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
@@ -69,8 +67,8 @@ jobs:
       - name: Run tests
         run: bundle exec rake test
       - name: Upload test coverage to CodeClimate
-        if: matrix.ruby == '2.7' && always()
+        if: secrets.cc_test_reporter_id && matrix.ruby == '2.7' && always()
         env:
-          CC_TEST_REPORTER_ID: ${{ matrix.secrets.cc_test_reporter_id }}
+          CC_TEST_REPORTER_ID: ${{ secrets.cc_test_reporter_id }}
         run: ./cc-test-reporter after-build
         continue-on-error: ${{ matrix.allow_failures == 'true' }}
