@@ -15,9 +15,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/pboling/rspec-pending_for'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['lib/**/*', 'LICENSE', 'README.md']
+  spec.files         = Dir['lib/**/*', 'LICENSE', 'README.md', 'CODE_OF_CONDUCT.md']
   spec.bindir        = 'exe'
+  spec.rdoc_options  = ["--charset=UTF-8"]
   spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 1.8.7'
 
   spec.add_dependency 'rspec-core'
   spec.add_dependency 'ruby_engine', '>= 1', '< 3'
