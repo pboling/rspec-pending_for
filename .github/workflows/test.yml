@@ -70,5 +70,5 @@ jobs:
         if: matrix.ruby == '2.7' && always()
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        run: ./cc-test-reporter after-build
+        run: ./cc-test-reporter after-build -t simplecov -d
         continue-on-error: ${{ matrix.allow_failures == 'true' }}
