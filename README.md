@@ -22,7 +22,7 @@ Requires Ruby 1.9+ (any engine)
 | version                 |  [![Version](https://img.shields.io/gem/v/rspec-pending_for.svg)](https://rubygems.org/gems/rspec-pending_for) |
 | dependencies            |  [![Depfu](https://badges.depfu.com/badges/79867e590f063376f40b031a1447c215/count.svg)](https://depfu.com/github/pboling/rspec-pending_for?project_id=5865) |
 | CI >= ruby 2.0.0        |  [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fpboling%2Frspec-pending_for%2Fbadge&style=flat)](https://actions-badge.atrox.dev/pboling/rspec-pending_for/goto) |
-| CI <= ruby 2.0.0        |  [![Build Status](https://travis-ci.org/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.org/pboling/rspec-pending_for) |
+| CI <= ruby 2.0.0        |  [![Build Status](https://travis-ci.com/pboling/rspec-pending_for.svg?branch=master)](https://travis-ci.com/pboling/rspec-pending_for) |
 | test coverage           |  [![Test Coverage](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/test_coverage)](https://codeclimate.com/github/pboling/rspec-pending_for/test_coverage) |
 | maintainability         |  [![Maintainability](https://api.codeclimate.com/v1/badges/266bc0935f185153cce4/maintainability)](https://codeclimate.com/github/pboling/rspec-pending_for/maintainability) |
 | code triage             |  [![Open Source Helpers](https://www.codetriage.com/pboling/rspec-pending_for/badges/users.svg)](https://www.codetriage.com/pboling/rspec-pending_for) |
