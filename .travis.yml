@@ -4,6 +4,10 @@ email: false
 cache:
   directories:
     - ../bundle
+apt:
+  - libssl1.0-dev
+  - openssl1.0
+
 env:
   global:
     - JRUBY_OPTS="-Xcli.debug=true --debug --dev"
