@@ -1,34 +1,21 @@
-dist: precise
+dist: trusty
 language: ruby
 email: false
 cache:
   directories:
     - ../bundle
 
-env:
-  global:
-    - JRUBY_OPTS="-Xcli.debug=true --debug --dev"
 bundler_args: "--binstubs --standalone --without documentation --jobs 3 --retry 3 --path ../bundle"
 
-before_install:
-  - echo "Warning installing older versions of Rubygems / Bundler"
-  - yes | gem update --system '2.7.8' --force
-  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v '< 2'
+#before_install:
+#  - echo "Warning installing older versions of Rubygems / Bundler"
+#  - yes | gem update --system '2.7.8' --force
+#  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+#  - gem install bundler -v '< 2'
 
 script:
   - bundle exec rspec
 
 rvm:
-  - 1.8.7
-  - 1.9.2
   - 1.9.3
   - 2.0.0
-  - ree
-  - jruby-1.7
-
-matrix:
-  include:
-    - rvm: jruby-1.7
-      env: JRUBY_OPTS='--dev --1.8'
-  fast_finish: true
