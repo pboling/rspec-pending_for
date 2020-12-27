@@ -12,7 +12,7 @@ it('blah is blah') do
 end
 ```
 
-Requires Ruby 1.9+ (any engine)
+Requires Ruby 1.8.7+ (same as RSPec, any engine)
 
 | Project                 |  Rspec::PendingFor |
 |------------------------ | ----------------------- |
