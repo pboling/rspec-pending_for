@@ -26,26 +26,28 @@ group :documentation do
 end
 
 group :development, :test do
-  # No need to run byebug / pry on earlier versions
-  if ruby_version >= Gem::Version.new('2.4') && RUBY_ENGINE == 'ruby'
-    gem 'byebug'
-    gem 'pry'
-    gem 'pry-byebug'
+  if ruby_version >= Gem::Version.new('2.4')
+    # No need to run byebug / pry on earlier versions
+    gem 'byebug', :platform => :mri
+    gem 'pry', :platform => :mri
+    gem 'pry-byebug', :platform => :mri
+  end
+
+  if ruby_version >= Gem::Version.new('2.7')
+    # No need to run rubocop or simplecov on earlier versions
+    gem 'rubocop', '~> 1.9', :platform => :mri
+    gem 'rubocop-md', :platform => :mri
+    gem 'rubocop-minitest', :platform => :mri
+    gem 'rubocop-packaging', :platform => :mri
+    gem 'rubocop-performance', :platform => :mri
+    gem 'rubocop-rake', :platform => :mri
+    gem 'rubocop-rspec', :platform => :mri
+
+    gem 'simplecov', '~> 0.21', :platform => :mri
   end
 end
 
 group :test do
-  # No need to run rubocop or simplecov on earlier versions
-  if ruby_version >= Gem::Version.new('2.4') && RUBY_ENGINE == 'ruby'
-    gem 'rubocop', '~> 1.6'
-    gem 'rubocop-md'
-    gem 'rubocop-minitest'
-    gem 'rubocop-packaging'
-    gem 'rubocop-rake'
-    gem 'rubocop-rspec'
-    gem 'simplecov'
-  end
-
   gem 'test-unit', '~> 3.0' if ruby_version >= Gem::Version.new('2.2')
 
   # Version 5.12 of minitest requires Ruby 2.4
