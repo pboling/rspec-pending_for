@@ -21,7 +21,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
-          - 3.0.0-rc1
+          - 3.0.0
           - 2.7
           - 2.6
           - 2.5
@@ -29,7 +29,6 @@ jobs:
           - 2.3
           - 2.2
           - 2.1
-          - ruby-head
         include:
           - ruby: jruby-9.1.17.0
             bundler: 1
