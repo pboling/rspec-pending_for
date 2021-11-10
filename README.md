@@ -5,6 +5,7 @@ Easiest to just show you:
 ```ruby
 it('blah is blah') do
   pending_for(:engine => 'rbx')
+  pending_for(:engine => 'truffleruby')
   pending_for(:engine => 'ruby', :versions => '2.1.5')
   pending_for(:engine => 'jruby', :versions => '2.2.2', :reason => 'due to a bug in Ruby')
   pending_for(:engine => 'ruby', :versions => '2.0.0', :reason => "because I don't have the time")
