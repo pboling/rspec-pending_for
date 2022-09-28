@@ -165,7 +165,7 @@ or in a `gemspec`
 [documentation]: http://rdoc.info/github/pboling/rspec-pending_for/frames
 [homepage]: https://github.com/pboling/rspec-pending_for
 [blogpage]: http://www.railsbling.com/tags/rspec-pending_for/
-[license]: LICENSE
+[license]: LICENSE.txt
 [railsbling]: http://www.railsbling.com
 [peterboling]: https://about.me/peter.boling
 [refugees]: https://www.crowdrise.com/helprefugeeswithhopefortomorrowliberia/fundraiser/peterboling
