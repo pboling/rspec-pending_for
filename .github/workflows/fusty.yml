@@ -1,5 +1,5 @@
 # NOTE: Hoary is a synonym of ancient
-name: MRI 2.2, 2.1, 2.0, 1.9, 1.8 (EOL)
+name: MRI 1.9, 1.8 (EOL)
 
 on:
   push:
