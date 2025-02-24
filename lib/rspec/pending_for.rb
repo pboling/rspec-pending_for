@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
-require 'ruby_version'
-require 'ruby_engine'
-require 'rspec/pending_for/version'
-require 'rspec/pending_for/engine_or_versions_required'
-require 'rspec/pending_for/build'
-require 'rspec/pending_for/rspec'
+# External Libraries
+require "ruby_version"
+require "ruby_engine"
+
+# This gem
+require_relative "pending_for/version"
+require_relative "pending_for/engine_or_versions_required"
+require_relative "pending_for/build"
+require_relative "pending_for/rspec"
 
 module Rspec
   # Use with Rspec by including in your example groups, just like any other Rspec helpers:
@@ -42,7 +45,7 @@ module Rspec
     private
 
     def modify_example_with(message, options)
-      raise(EngineOrVersionsRequired, :pending_for) unless options[:engine] || options[:versions]
+      raise(EngineOrVersionsRequired, "#{message}_for") unless options[:engine] || options[:versions]
 
       build = Build.new(options)
       send(message, build.message) if build.current_matches_specified?

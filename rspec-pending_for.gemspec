@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 # NOTE: Have to use __FILE__ until Ruby 1.x support is dropped
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rspec/pending_for/version'
+# NOTE: This allows us to reload the file for specs and have it be accurately tracked for test coverage
+Kernel.load("rspec/pending_for/version.rb")
+gem_version = Rspec::PendingFor::Version::VERSION
+# NOTE: This prevents the warning about a redefined constant.
+Rspec::PendingFor::Version.send(:remove_const, :VERSION)
+Rspec::PendingFor.send(:remove_const, :VERSION)
 
 Gem::Specification.new do |spec|
   # Linux distros may package ruby gems differently,
@@ -20,7 +25,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.name = "rspec-pending_for"
-  spec.version = Rspec::PendingFor::VERSION
+  spec.version = gem_version
   spec.authors = ["Peter Boling"]
   spec.email = ["peter.boling@gmail.com"]
 
@@ -67,9 +72,9 @@ Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / ver
   ]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency('rspec-core', '~> 3.0')
-  spec.add_dependency('ruby_engine', '~> 2.0')
-  spec.add_dependency('ruby_version', '~> 1.0')
+  spec.add_dependency("rspec-core", "~> 3.0")
+  spec.add_dependency("ruby_engine", "~> 2.0")
+  spec.add_dependency("ruby_version", "~> 1.0")
 
   spec.add_development_dependency("minitest", "~> 5.3")                 # ruby >= 0
   spec.add_development_dependency("rspec", "~> 3.13")                   # ruby >= 0

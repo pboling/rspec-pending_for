@@ -15,7 +15,7 @@ rescue LoadError
 end
 
 desc "alias test task to spec"
-task test: :spec
+task :test => :spec
 
 begin
   require "reek/rake/task"
@@ -65,7 +65,7 @@ begin
   Kettle::Soup::Cover.install_tasks
 rescue LoadError
   desc("alias coverage task to spec (coverage unavailable)")
-  task(coverage: :spec)
+  task(:coverage => :spec)
 end
 
 begin
@@ -78,4 +78,4 @@ rescue LoadError
 end
 
 # coverage task will open coverage in browser locally
-task default: %i[coverage rubocop_gradual:autocorrect yard yard:junk]
+task :default => %i[coverage rubocop_gradual:autocorrect yard yard:junk]

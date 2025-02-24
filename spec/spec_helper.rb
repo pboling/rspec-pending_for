@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-ruby_version = Gem::Version.new(RUBY_VERSION)
-require 'simplecov' if ruby_version >= Gem::Version.new('2.7') && RUBY_ENGINE == 'ruby'
+# RSpec Configs
+require_relative "config/byebug"
+require_relative "config/rspec/rspec_core"
+require_relative "config/rspec/rspec_block_is_expected"
 
-require 'rspec/pending_for'
-
-RSpec.configure do |config|
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = '.rspec_status'
-
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  config.disable_monkey_patching!
-
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
+begin
+  # Last thing before this gem is code coverage:
+  require "kettle-soup-cover"
+  # Next line has a side effect of running the local ".simplecov" configuration
+  require "simplecov" if defined?(Kettle) && Kettle::Soup::Cover::DO_COV
+rescue LoadError
+  nil
 end
+
+# This gem
+require "rspec-pending_for"

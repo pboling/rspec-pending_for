@@ -33,13 +33,13 @@
 Easiest to just show you:
 
 ```ruby
-it('blah is blah') do
-  pending_for(:engine => 'rbx')
-  pending_for(:engine => 'truffleruby')
-  pending_for(:engine => 'ruby', :versions => '2.1.5')
-  pending_for(:engine => 'jruby', :versions => '2.2.2', :reason => 'due to a bug in Ruby')
-  pending_for(:engine => 'ruby', :versions => '2.0.0', :reason => "because I don't have the time")
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  pending_for(:engine => "rbx")
+  pending_for(:engine => "truffleruby")
+  pending_for(:engine => "ruby", :versions => "2.1.5")
+  pending_for(:engine => "jruby", :versions => "2.2.2", :reason => "due to a bug in Ruby")
+  pending_for(:engine => "ruby", :versions => "2.0.0", :reason => "because I don't have the time")
+  expect("blah").to(eq("blah"))
 end
 ```
 
@@ -74,53 +74,53 @@ If bundler is not being used to manage dependencies, install the gem by executin
 The gem autoconfigures itself for use in your Rspec suite.  Just add this line to yous `spec_helper.rb`:
 
 ```ruby
-require 'rspec/pending_for'
+require "rspec/pending_for"
 ```
 
 To mark a spec pending for a specific ruby engine, and/or versions:
 
 ```ruby
-it('blah is blah') do
-  pending_for(:engine => 'ruby', :versions => '2.1.5')
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  pending_for(:engine => "ruby", :versions => "2.1.5")
+  expect("blah").to(eq("blah"))
 end
 ```
 
 To skip a spec for a specific ruby engine, and/or versions:
 
 ```ruby
-it('blah is blah') do
-  skip_for(:engine => 'ruby', :versions => '2.1.5')
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  skip_for(:engine => "ruby", :versions => "2.1.5")
+  expect("blah").to(eq("blah"))
 end
 ```
 
 To mark a spec pending for all versions of a given engine:
 
 ```ruby
-it('blah is blah') do
-  pending_for(:engine => 'jruby')
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  pending_for(:engine => "jruby")
+  expect("blah").to(eq("blah"))
 end
 ```
 
 To mark a spec pending for a custom reason (overriding the default message):
 
 ```ruby
-it('blah is blah') do
-  pending_for(:engine => 'jruby', :reason => 'This does not work on JRuby')
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  pending_for(:engine => "jruby", :reason => "This does not work on JRuby")
+  expect("blah").to(eq("blah"))
 end
 ```
 
 To mark a spec pending or skipped for multiple engines and versions, just what you would expect:
 
 ```ruby
-it('blah is blah') do
-  skip_for(:engine => 'jruby', :reason => 'This does not work on JRuby so skipping for now') # All JRuby versions will be skipped
-  pending_for(:engine => 'rbx', :reason => 'This does not work on Rubinius so pending for now') # All rbx versions will be pending
-  pending_for(:engine => 'ruby', :versions => %w(1.9.3 2.0.0 2.1.0)) # uses the default message
-  expect('blah').to eq 'blah'
+it("blah is blah") do
+  skip_for(:engine => "jruby", :reason => "This does not work on JRuby so skipping for now") # All JRuby versions will be skipped
+  pending_for(:engine => "rbx", :reason => "This does not work on Rubinius so pending for now") # All rbx versions will be pending
+  pending_for(:engine => "ruby", :versions => %w(1.9.3 2.0.0 2.1.0)) # uses the default message
+  expect("blah").to(eq("blah"))
 end
 ```
 ## 🔐 Security
