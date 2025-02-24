@@ -23,7 +23,7 @@ jobs:
   test:
     name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
@@ -31,29 +31,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # Ruby 2.2
-          - ruby: "ruby-2.2"
-            appraisal: "ruby-2-2"
+          # Ruby 1.9
+          - ruby: "ruby-1.9"
+            appraisal: "ruby-1-9"
             exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: 2.7.11
+            bundler: 1.17.3
 
-          # Ruby 2.1
-          - ruby: "ruby-2.1"
-            appraisal: "ruby-2-1"
+          # Ruby 1.8
+          - ruby: "ruby-1.8"
+            appraisal: "ruby-1-8"
             exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
-
-          # Ruby 2.0
-          - ruby: "ruby-2.0"
-            appraisal: "ruby-2-0"
-            exec_cmd: "rake spec"
-            gemfile: "Appraisal.root"
-            rubygems: default
-            bundler: default
+            rubygems: 2.7.11
+            bundler: 1.17.3
 
     steps:
       - name: Checkout
