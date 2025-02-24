@@ -36,8 +36,8 @@ jobs:
             appraisal: "ruby-1-9"
             exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
-            rubygems: 2.7.11
-            bundler: 1.17.3
+            rubygems: default
+            bundler: default
 
 #          # Ruby 1.8 is no longer available to test on GHA
 #          - ruby: "ruby-1.8"
