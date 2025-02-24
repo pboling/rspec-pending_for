@@ -9,3 +9,6 @@ RSpec/MultipleMemoizedHelpers:
 
 RSpec/ExampleLength:
   Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
