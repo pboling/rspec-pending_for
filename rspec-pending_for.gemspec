@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   default_user_cert_path = File.join(File.dirname(__FILE__), default_user_cert)
   cert_file_path = ENV.fetch("GEM_CERT_PATH", default_user_cert_path)
   cert_chain = cert_file_path.split(",")
-  if cert_file_path && cert_chain.map {|fp| File.exist?(fp) }
+  if cert_file_path && cert_chain.map { |fp| File.exist?(fp) }
     spec.cert_chain = cert_chain
     if $PROGRAM_NAME.end_with?("gem", "rake") && ARGV[0] == "build"
       spec.signing_key = File.expand_path("~/.ssh/gem-private_key.pem")
