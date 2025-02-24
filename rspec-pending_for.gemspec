@@ -19,14 +19,13 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.rdoc_options  = ['--charset=UTF-8']
   spec.require_paths = ['lib']
-  # Rubocop can't handle this line with such an old Ruby value.
-  # spec.required_ruby_version = '>= 1.8.7'
+
+  spec.required_ruby_version = '>= 1.8.7'
 
   spec.add_dependency 'rspec-core'
   spec.add_dependency 'ruby_engine', '>= 1', '< 3'
   spec.add_dependency 'ruby_version', '~> 1.0'
 
-  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'minitest', '~> 5.3'
-  spec.add_development_dependency 'rspec', '~> 3'
+  spec.add_development_dependency 'rspec', '~> 3.13'
 end

@@ -1,66 +1,51 @@
 # frozen_string_literal: true
 
-# This Gemfile copies liberally from https://github.com/rspec/rspec-core/blob/main/Gemfile
-source 'https://rubygems.org'
-
-# Specify your gem's dependencies in rspec-pending_for.gemspec
-gemspec
+source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 git_source(:gitlab) { |repo_name| "https://gitlab.com/#{repo_name}" }
 
-ruby_version = Gem::Version.new(RUBY_VERSION)
-minimum_version = ->(version, engine = "ruby") { ruby_version >= Gem::Version.new(version) && RUBY_ENGINE == engine }
-linting = minimum_version.call("2.7")
-coverage = minimum_version.call("2.7")
-debug = minimum_version.call("2.4")
+#### IMPORTANT #######################################################
+# Gemfile is for local development ONLY; Gemfile is NOT loaded in CI #
+####################################################### IMPORTANT ####
 
-if ruby_version < Gem::Version.new('1.9.3')
-  gem 'rake', '< 11.0.0' # rake 11 requires Ruby 1.9.3 or later
-elsif ruby_version < Gem::Version.new('2.0.0')
-  gem 'rake', '< 12.0.0' # rake 12 requires Ruby 2.0.0 or later
-elsif ruby_version < Gem::Version.new('2.2.0')
-  gem 'rake', '< 13.0.0' # rake 13 requires Ruby 2.2.0 or later
-else
-  gem 'rake', '> 13.0.0'
-end
+# For Ruby version specific dependencies
+ruby_version = Gem::Version.create(RUBY_VERSION)
 
-gem 'yard', '~> 0.9.24', :require => false
+# Include dependencies from <gem name>.gemspec
+gemspec
 
-### deps for rdoc.info
-group :documentation do
-  gem 'github-markup', :platform => :mri
-  gem 'redcarpet', :platform => :mri
-end
-
-group :development, :test do
-  if debug
-    # No need to run byebug / pry on earlier versions
-    gem 'byebug', :platform => :mri
-    gem 'pry', :platform => :mri
-    gem 'pry-byebug', :platform => :mri
+platform :mri do
+  # Debugging - Ensure ENV["DEBUG"] == "true" to use debuggers within spec suite
+  if ruby_version < Gem::Version.create("2.7")
+    # Use byebug in code
+    gem "byebug", ">= 11"
+  else
+    # Use binding.break, binding.b, or debugger in code
+    gem "debug", ">= 1.0.0"
   end
 
-  if linting
-    # Commented out rubocop-md because of the <--rubocop/md--> bug
-    # gem "rubocop-md", :platform => :mri, require: false
-    # Can be added once we reach rubocop-lts >= v10 (i.e. drop Ruby 2.2)
-    # gem 'rubocop-packaging', :platform => :mri, require: false
-    gem 'rubocop-performance', :platform => :mri, require: false
-    gem 'rubocop-rake', :platform => :mri, require: false
-    gem 'rubocop-rspec', :platform => :mri, require: false
-    gem "rubocop-thread_safety", :platform => :mri, require: false
+  # Dev Console - Binding.pry - Irb replacement
+  gem "pry", "~> 0.14"                     # ruby >= 2.0
 
-    gem 'simplecov', '~> 0.21', :platform => :mri
-  end
-
-  if coverage
-    gem "codecov", "~> 0.6" # For CodeCov
-    gem "simplecov", "~> 0.21", require: false
-    gem "simplecov-cobertura" # XML for Jenkins
-    gem "simplecov-json" # For CodeClimate
-    gem "simplecov-lcov", "~> 0.8", require: false
-  end
+  gem "reek", "~> 6.4"
 end
 
-gem 'contracts', '< 0.16' if ruby_version < Gem::Version.new('1.9.0')
+# Security Audit
+if ruby_version >= Gem::Version.create("3")
+  # NOTE: Audit fails on Ruby 2.7 because nokogiri has dropped support for Ruby < 3
+  # See: https://github.com/sparklemotion/nokogiri/security/advisories/GHSA-r95h-9x8f-r3f7
+  # We can't add upgraded nokogiri here unless we are developing on Ruby 3+
+  eval_gemfile "gemfiles/modular/audit.gemfile"
+end
+
+# Code Coverage
+eval_gemfile "gemfiles/modular/coverage.gemfile"
+
+# Linting
+eval_gemfile "gemfiles/modular/style.gemfile"
+
+# Documentation
+eval_gemfile "gemfiles/modular/documentation.gemfile"
+
+gem "appraisal", github: "pboling/appraisal", branch: "galtzo"
