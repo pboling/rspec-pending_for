@@ -20,6 +20,22 @@ appraise "current" do
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end
 
+appraise "ruby-1-8" do
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+appraise "ruby-1-9" do
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+appraise "ruby-2-0" do
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
+appraise "ruby-2-1" do
+  remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
+end
+
 appraise "ruby-2-2" do
   remove_gem "appraisal" # only present because it must be in the gemfile because we target a git branch
 end

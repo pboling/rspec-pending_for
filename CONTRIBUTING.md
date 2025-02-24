@@ -4,9 +4,8 @@ Bug reports and pull requests are welcome on GitHub at [https://gitlab.com/pboli
 . This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to
 the [code of conduct][🤝conduct].
 
-To submit a patch, please fork the project and create a patch with
-tests. Once you're happy with it send a pull request and post a message to the
-[google group][⛳mail-list] or on the [gitter chat][🏘chat].
+To submit a patch, please fork the project and create a patch with tests.
+Once you're happy with it send a pull request.
 
 We [![Keep A Changelog][📗keep-changelog-img]][📗keep-changelog] so if you make changes, remember to update it.
 
@@ -115,7 +114,6 @@ See: [RubyGems Security Guide][🔒️rubygems-security-guide]
 [⛳mail-list]: http://groups.google.com/group/oauth-ruby
 [🚎src-main]: https://gitlab.com/pboling/rspec-pending_for
 [🧪build]: https://github.com/pboling/rspec-pending_for/actions
-[🏘chat]: https://matrix.to/#/#pboling_version_gem:gitter.im
 [🤝conduct]: https://gitlab.com/pboling/rspec-pending_for/-/blob/main/CODE_OF_CONDUCT.md
 [🖐contrib-rocks]: https://contrib.rocks
 [🖐contributors]: https://github.com/pboling/rspec-pending_for/graphs/contributors

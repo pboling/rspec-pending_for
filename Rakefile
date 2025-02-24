@@ -2,7 +2,7 @@
 
 require "bundler/gem_tasks"
 
-require "version_gem"
+require "rspec-pending_for"
 
 begin
   require "rspec/core/rake_task"
