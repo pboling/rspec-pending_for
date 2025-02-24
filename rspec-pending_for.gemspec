@@ -76,7 +76,17 @@ Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / ver
   spec.add_dependency("ruby_engine", "~> 2.0")
   spec.add_dependency("ruby_version", "~> 1.0")
 
+  # Tests
   spec.add_development_dependency("minitest", "~> 5.3")                 # ruby >= 0
   spec.add_development_dependency("rspec", "~> 3.13")                   # ruby >= 0
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")  # ruby >= 1.8.7
+
+  # Development Tasks
+  spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
+
+  # Linting - rubocop-lts v0 is a rubocop wrapper for Ruby >= 1.8.7,
+  #   and should only be bumped when dropping old Ruby support
+  # NOTE: it can only be installed on, and run on Ruby >= 2.7, so we add the dependency in the Gemfile.
+  # see: https://rubocop-lts.gitlab.io
+  # spec.add_development_dependency 'rubocop-lts', ['~> 0.1', '>= 0.1.1']
 end
