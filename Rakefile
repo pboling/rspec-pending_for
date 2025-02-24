@@ -78,4 +78,4 @@ rescue LoadError
 end
 
 # coverage task will open coverage in browser locally
-task :default => %i[coverage rubocop_gradual:autocorrect yard yard:junk]
+task :default => ["coverage", "rubocop_gradual:autocorrect", "yard", "yard:junk"]

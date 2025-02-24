@@ -4,15 +4,18 @@ env:
   K_SOUP_COV_DO: false
 
 on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - '!*' # Do not execute on tags
-  pull_request:
-    branches:
-      - '*'
+#  push:
+#    branches:
+#      - 'main'
+#    tags:
+#      - '!*' # Do not execute on tags
+#  pull_request:
+#    branches:
+#      - '*'
   # Allow manually triggering the workflow.
+  # We only run TruffleRuby on workflow dispatch because something about this gem is incompatible with truffleruby.
+  # The failure seems to change from one build to the next, usually while running bundle, but on different gems.
+  # Have seen it fail while installing ruby_engine and rspec-block_is_expected.
   workflow_dispatch:
 
 permissions:
