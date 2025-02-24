@@ -82,7 +82,7 @@ Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / ver
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")  # ruby >= 1.8.7
 
   # Development Tasks
-  spec.add_development_dependency("rake", "~> 13.0")                          # ruby >= 2.2
+  spec.add_runtime_dependency("rake", ">= 10")         # Last version supporting Ruby 1.8.7
 
   # Linting - rubocop-lts v0 is a rubocop wrapper for Ruby >= 1.8.7,
   #   and should only be bumped when dropping old Ruby support
