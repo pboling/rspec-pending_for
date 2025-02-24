@@ -7,10 +7,13 @@
 /pkg/
 /spec/reports/
 /tmp/
-*.gem
 /vendor/
-/gemfiles/*.lock
-/gemfiles/.bundle/
 
 # rspec failure tracking
 .rspec_status
+
+# Packaging Artifacts
+*.gem
+/gemfiles/*.gemfile.lock
+Appraisal.*.gemfile.lock
+/gemfiles/.bundle/
