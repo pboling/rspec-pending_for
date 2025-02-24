@@ -1,4 +1,7 @@
 {
+  "bin/bundle:247448467": [
+    [64, 5, 20, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2485198147]
+  ],
   "spec/rspec/pending_for/build_spec.rb:791255635": [
     [63, 13, 24, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 408355943],
     [68, 15, 25, "RSpec/ContextWording: Context description should match /^when\\b/, /^with\\b/, or /^without\\b/.", 2840368563],

@@ -22,13 +22,16 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 ### Removed
 
-## [1.0.0] - 2025-02-24 ([tag][1.0.0t])
+## [0.1.7] - 2025-02-24 ([tag][1.0.0t])
 - COVERAGE:  98.44% -- 63/64 lines in 6 files
 - BRANCH COVERAGE:  94.44% -- 17/18 branches in 6 files
 - 63.64% documented
 ### Added
-- Initial release
+- Specs for `skip_for`
+### Fixed
+- Compatibility with truffleruby (maybe? not able to run it in CI yet)
+- Fixed compatibility with Ruby < 2
 
-[Unreleased]: https://github.com/pboling/rspec-pending_for/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/pboling/rspec-pending_for/compare/SHA_HERE...v1.0.0
-[1.0.0t]: https://github.com/pboling/rspec-pending_for/tags/v1.0.0
+[Unreleased]: https://github.com/pboling/rspec-pending_for/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/pboling/rspec-pending_for/compare/v0.1.16...v0.1.7
+[0.1.7t]: https://github.com/pboling/rspec-pending_for/tags/v0.1.6
