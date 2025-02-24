@@ -1,4 +1,5 @@
-name: Style
+# NOTE: Hoary is a synonym of ancient
+name: MRI 2.2 (EOL)
 
 on:
   push:
@@ -12,9 +13,6 @@ on:
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:
   # The concurrency group contains the workflow name and the branch name.
@@ -22,10 +20,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  rubocop:
-    name: Style on ${{ matrix.ruby }}@current
+  test:
+    name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
@@ -33,13 +31,45 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # Style
-          - ruby: "ruby"
-            appraisal: "style"
-            exec_cmd: "rake rubocop_gradual:check"
+          # Ruby 2.2
+          - ruby: "ruby-2.2"
+            appraisal: "ruby-2-2"
+            exec_cmd: "rake spec"
             gemfile: "Appraisal.root"
-            rubygems: latest
-            bundler: latest
+            rubygems: default
+            bundler: default
+
+          # Ruby 2.1
+          - ruby: "ruby-2.1"
+            appraisal: "ruby-2-1"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # Ruby 2.0
+          - ruby: "ruby-2.0"
+            appraisal: "ruby-2-0"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # Ruby 1.9
+          - ruby: "ruby-1.9"
+            appraisal: "ruby-1-9"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
+
+          # Ruby 1.8
+          - ruby: "ruby-1.8"
+            appraisal: "ruby-1-8"
+            exec_cmd: "rake spec"
+            gemfile: "Appraisal.root"
+            rubygems: default
+            bundler: default
 
     steps:
       - name: Checkout
@@ -60,5 +90,5 @@ jobs:
         run: bundle
       - name: Appraisal for ${{ matrix.appraisal }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle
-      - name: Run ${{ matrix.appraisal }} checks via ${{ matrix.exec_cmd }}
+      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}
