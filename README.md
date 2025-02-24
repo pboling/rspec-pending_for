@@ -18,6 +18,7 @@
 [![CI Unsupported][🚎7-us-wfi]][🚎7-us-wf]
 [![CI Ancient][🚎1-an-wfi]][🚎1-an-wf]
 [![CI Hoary][🚎8-ho-wfi]][🚎8-ho-wf]
+[![CI Fusty][🚎12-fu-wfi]][🚎12-fu-wf]
 [![CI Test Coverage][🚎2-cov-wfi]][🚎2-cov-wf]
 [![CI Style][🚎5-st-wfi]][🚎5-st-wf]
 
@@ -43,6 +44,10 @@ it("blah is blah") do
 end
 ```
 
+I expect the current release of this gem to be compatible with Ruby 1.8.7+,
+but it is only tested on CI against Ruby 1.9.3+,
+due to the inherent limitations of GitHub Actions.
+
 ## Info you can shake a stick at
 
 | Tokens to Remember      | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace]                                                                                                                                                                                                                                                                                                                                                                          |
@@ -51,7 +56,7 @@ end
 | Works with Truffle Ruby | [![Truffle Ruby 22.3 Compat][💎truby-22.3i]][🚎9-t-wf] [![Truffle Ruby 23.0 Compat][💎truby-23.0i]][🚎9-t-wf] [![Truffle Ruby 23.1 Compat][💎truby-23.1i]][🚎9-t-wf] [![Truffle Ruby 24.1 Compat][💎truby-c-i]][🚎11-c-wf] [![Truffle Ruby HEAD Compat][💎truby-headi]][🚎3-hd-wf]                                                                                                                                                                                  |
 | Works with MRI Ruby 3   | [![Ruby 3.0 Compat][💎ruby-3.0i]][🚎4-lg-wf] [![Ruby 3.1 Compat][💎ruby-3.1i]][🚎6-s-wf] [![Ruby 3.2 Compat][💎ruby-3.2i]][🚎6-s-wf] [![Ruby 3.3 Compat][💎ruby-3.3i]][🚎6-s-wf] [![Ruby 3.4 Compat][💎ruby-c-i]][🚎11-c-wf] [![Ruby HEAD Compat][💎ruby-headi]][🚎3-hd-wf]                                                                                                                                                                                         |
 | Works with MRI Ruby 2   | [![Ruby 2.0 Compat][💎ruby-2.0i]][🚎8-ho-wf] [![Ruby 2.1 Compat][💎ruby-2.1i]][🚎8-ho-wf] [![Ruby 2.2 Compat][💎ruby-2.2i]][🚎8-ho-wf] [![Ruby 2.3 Compat][💎ruby-2.3i]][🚎1-an-wf] [![Ruby 2.4 Compat][💎ruby-2.4i]][🚎1-an-wf] [![Ruby 2.5 Compat][💎ruby-2.5i]][🚎1-an-wf] [![Ruby 2.6 Compat][💎ruby-2.6i]][🚎7-us-wf] [![Ruby 2.7 Compat][💎ruby-2.7i]][🚎7-us-wf]                                                                                             |
-| Works with MRI Ruby 1   | [![Ruby 1.8 Compat][💎ruby-1.8i]][🚎8-ho-wf] [![Ruby 1.9 Compat][💎ruby-1.9i]][🚎8-ho-wf]                                                                                                                                                                                                                                                                                                                                                                           |
+| Works with MRI Ruby 1   | [![Ruby 1.9 Compat][💎ruby-1.9i]][🚎12-fu-wf]                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Source                  | [![Source on GitLab.com][📜src-gl-img]][📜src-gl] [![Source on Github.com][📜src-gh-img]][📜src-gh] [![The best SHA: dQw4w9WgXcQ!][🧮kloc-img]][🧮kloc]                                                                                                                                                                                                                                                                                                             |
 | Documentation           | [![Current release on RubyDoc.info][📜docs-cr-rd-img]][🚎yard-current] [![HEAD on RubyDoc.info][📜docs-head-rd-img]][🚎yard-head] [![BDFL Blog][🚂bdfl-blog-img]][🚂bdfl-blog] [![Wiki][📜wiki-img]][📜wiki]                                                                                                                                                                                                                                                        |
 | Compliance              | [![License: MIT][📄license-img]][📄license-ref] [![📄ilo-declaration-img]][📄ilo-declaration] [![Security Policy][🔐security-img]][🔐security] [![CodeQL][🖐codeQL-img]][🖐codeQL] [![Contributor Covenant 2.1][🪇conduct-img]][🪇conduct] [![SemVer 2.0.0][📌semver-img]][📌semver] [![Keep-A-Changelog 1.0.0][📗keep-changelog-img]][📗keep-changelog]                                                                                                            |
@@ -124,6 +129,7 @@ it("blah is blah") do
   expect("blah").to(eq("blah"))
 end
 ```
+
 ## 🔐 Security
 
 See [SECURITY.md][🔐security].
@@ -313,6 +319,8 @@ or one of the others at the head of this README.
 [🚎10-j-wfi]: https://github.com/pboling/rspec-pending_for/actions/workflows/jruby.yml/badge.svg
 [🚎11-c-wf]: https://github.com/pboling/rspec-pending_for/actions/workflows/current.yml
 [🚎11-c-wfi]: https://github.com/pboling/rspec-pending_for/actions/workflows/current.yml/badge.svg
+[🚎12-fu-wf]: https://github.com/pboling/rspec-pending_for/actions/workflows/fusty.yml
+[🚎12-fu-wfi]: https://github.com/pboling/rspec-pending_for/actions/workflows/fusty.yml/badge.svg
 [⛳liberapay-img]: https://img.shields.io/liberapay/patrons/pboling.svg?logo=liberapay
 [⛳liberapay]: https://liberapay.com/pboling/donate
 [🖇sponsor-img]: https://img.shields.io/badge/Sponsor_Me!-pboling.svg?style=social&logo=github
@@ -323,7 +331,6 @@ or one of the others at the head of this README.
 [🖇kofi]: https://ko-fi.com/O5O86SNP4
 [🖇patreon-img]: https://img.shields.io/badge/patreon-donate-yellow.svg
 [🖇patreon]: https://patreon.com/galtzo
-[💎ruby-1.8i]: https://img.shields.io/badge/Ruby-1.8-412BD3?style=for-the-badge&logo=ruby&logoColor=white
 [💎ruby-1.9i]: https://img.shields.io/badge/Ruby-1.9-412BD3?style=for-the-badge&logo=ruby&logoColor=white
 [💎ruby-2.0i]: https://img.shields.io/badge/Ruby-2.0-DF00CA?style=for-the-badge&logo=ruby&logoColor=white
 [💎ruby-2.1i]: https://img.shields.io/badge/Ruby-2.1-DF00CA?style=for-the-badge&logo=ruby&logoColor=white

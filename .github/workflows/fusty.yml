@@ -1,5 +1,5 @@
 # NOTE: Hoary is a synonym of ancient
-name: MRI 1.9, 1.8 (EOL)
+name: MRI 1.9 (EOL)
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
   test:
     name: Specs ${{ matrix.ruby }} ${{ matrix.appraisal }}${{ matrix.name_extra || '' }}
     if: "!contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]')"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
     env: # $BUNDLE_GEMFILE must be set at job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}.gemfile
@@ -39,13 +39,13 @@ jobs:
             rubygems: 2.7.11
             bundler: 1.17.3
 
-          # Ruby 1.8
-          - ruby: "ruby-1.8"
-            appraisal: "ruby-1-8"
-            exec_cmd: "rake spec"
-            gemfile: "Appraisal.root"
-            rubygems: 2.7.11
-            bundler: 1.17.3
+#          # Ruby 1.8 is no longer available to test on GHA
+#          - ruby: "ruby-1.8"
+#            appraisal: "ruby-1-8"
+#            exec_cmd: "rake spec"
+#            gemfile: "Appraisal.root"
+#            rubygems: default
+#            bundler: default
 
     steps:
       - name: Checkout
