@@ -47,7 +47,6 @@ Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / ver
   # spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/-/issues"
   # spec.metadata["documentation_uri"] = "https://www.rubydoc.info/gems/#{spec.name}/#{spec.version}"
   # spec.metadata["wiki_uri"] = "#{spec.homepage}/-/wiki"
-  # spec.metadata["mailing_list_uri"] = "https://groups.google.com/g/oauth-ruby"
   # spec.metadata["funding_uri"] = "https://liberapay.com/pboling"
   # spec.metadata["rubygems_mfa_required"] = "true"
 
