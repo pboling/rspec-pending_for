@@ -41,7 +41,7 @@ Mark specs pending or skipped for specific Ruby engine (e.g. MRI or JRuby) / ver
   spec.required_ruby_version = ">= 1.8.7"
 
   # No metadata for any Rubygems compatible with Ruby v1
-  # spec.metadata["homepage_uri"] = spec.homepage
+  # spec.metadata["homepage_uri"] = "https://railsbling.com/tags/#{spec.name}/"
   # spec.metadata["source_code_uri"] = "#{spec.homepage}/-/tree/v#{spec.version}"
   # spec.metadata["changelog_uri"] = "#{spec.homepage}/-/blob/v#{spec.version}/CHANGELOG.md"
   # spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/-/issues"
